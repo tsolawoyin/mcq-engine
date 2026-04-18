@@ -42,7 +42,11 @@ function ExamContent() {
     <div className="grid flex-1 grid-rows-[auto_1fr] gap-5">
       <div className="flex justify-between text-2xl items-center">
         <div>{timeLeft}</div>
-        <div className="text-red-600 text-3xl">{currentExam.score}</div>
+        <div className="text-red-600 text-3xl">
+          {currentExam.noq > 0
+            ? Math.round((currentExam.score / currentExam.noq) * 100)
+            : 0}%
+        </div>
       </div>
       <RenderQuestion />
     </div>
@@ -151,7 +155,7 @@ function RenderQuestion() {
           markedIds={markedIds}
           onJump={jumpTo}
         />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
