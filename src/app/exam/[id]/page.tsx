@@ -15,6 +15,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import Footer from "@/components/ui/footer";
 
 export default function Page() {
   return (
@@ -150,6 +151,7 @@ function RenderQuestion() {
           markedIds={markedIds}
           onJump={jumpTo}
         />
+        <Footer />
       </div>
     </div>
   );
