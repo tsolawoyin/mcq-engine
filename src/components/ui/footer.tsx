@@ -23,6 +23,16 @@ export default function Footer() {
             contribute questions
           </a>
         </p>
+        <p>
+          <a
+            href="https://whatsapp.com/channel/0029Vb7bkD13rZZjh4Ppes17"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-primary"
+          >
+            Follow for updates
+          </a>
+        </p>
       </div>
     </footer>
   );
