@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { ExamQuestion } from "@/components/config";
 import { useParams } from "next/navigation";
 import ExamProvider, { useExamContext } from "@/provider/exam-provider";
@@ -17,6 +17,14 @@ import {
 } from "@/components/ui/alert-dialog";
 
 export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading exam...</div>}>
+      <ExamPage />
+    </Suspense>
+  );
+}
+
+function ExamPage() {
   const { id } = useParams();
 
   return (

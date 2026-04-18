@@ -75,10 +75,10 @@ export default function useExam(examId: string) {
     finishExam();
   };
 
-  useEffect(() => {
-    examSession.exams[0] = currentExam;
-    localStorage.setItem(examId, JSON.stringify(examSession));
-  }, [currentExam]);
+//   useEffect(() => {
+//     examSession.exams[0] = currentExam;
+//     localStorage.setItem(examId, JSON.stringify(examSession));
+//   }, [currentExam]);
 
   useEffect(() => {
     // collect question IDs across all exams
