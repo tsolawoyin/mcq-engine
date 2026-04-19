@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ExamQuestion } from "@/components/config";
 import { useParams } from "next/navigation";
 import ExamProvider, { useExamContext } from "@/provider/exam-provider";
@@ -45,7 +45,8 @@ function ExamContent() {
         <div className="text-red-600 text-3xl">
           {currentExam.noq > 0
             ? Math.round((currentExam.score / currentExam.noq) * 100)
-            : 0}%
+            : 0}
+          %
         </div>
       </div>
       <RenderQuestion />
@@ -56,6 +57,7 @@ function ExamContent() {
 function RenderQuestion() {
   const {
     currentExam,
+    setCurrentExam,
     questionMap,
     markUp,
     markDown,
@@ -65,22 +67,26 @@ function RenderQuestion() {
   } = useExamContext();
   const examEnded = timeLeft === "00:00:00" || submitted;
   const questions = currentExam.questions;
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [markedIds, setMarkedIds] = useState<Set<string>>(new Set());
+  const [currentIndex, setCurrentIndex] = useState(currentExam.currentQuestion);
 
   const examQ = questions[currentIndex];
 
   if (!examQ) return <div>No questions available for this exam.</div>;
 
+  // we need a way to track score across refresh
   const markCurrent = () => {
-    if (markedIds.has(examQ.id) || !examQ.userAnswer) return;
+    // if (markedIds.has(examQ.id) || !examQ.userAnswer) return;
+    if (questions[currentIndex].marked || !examQ.userAnswer) return; // sharp
     const question = questionMap.get(examQ.question);
     if (!question) return;
 
     if (examQ.userAnswer === question.answer) markUp();
     else markDown();
 
-    setMarkedIds((prev) => new Set(prev).add(examQ.id));
+    setCurrentExam((draft) => {
+      // exactly. this will help persist state....
+      draft.questions[currentIndex].marked = true;
+    });
   };
 
   const prev = () => {
@@ -98,6 +104,13 @@ function RenderQuestion() {
     setCurrentIndex(index);
   };
 
+  // better. thank you.
+  useEffect(() => {
+    setCurrentExam((draft) => {
+      draft.currentQuestion = currentIndex;
+    });
+  }, [currentIndex, setCurrentExam]);
+
   return (
     <div className="grid h-full grid-rows-[1fr_auto] gap-4">
       <div className="mt-7">
@@ -107,7 +120,7 @@ function RenderQuestion() {
           </div>
           <QuestionInt
             examQ={examQ}
-            marked={markedIds.has(examQ.id)}
+            marked={currentExam.questions[currentIndex].marked}
             disabled={examEnded}
           />
         </div>
@@ -152,7 +165,6 @@ function RenderQuestion() {
         <QuestionNav
           questions={questions}
           currentIndex={currentIndex}
-          markedIds={markedIds}
           onJump={jumpTo}
         />
         {/* <Footer /> */}
@@ -221,12 +233,10 @@ const QuestionInt = ({
 function QuestionNav({
   questions,
   currentIndex,
-  markedIds,
   onJump,
 }: {
   questions: ExamQuestion[];
   currentIndex: number;
-  markedIds: Set<string>;
   onJump: (index: number) => void;
 }) {
   const { questionMap } = useExamContext();
@@ -234,7 +244,7 @@ function QuestionNav({
   const getKeyStyle = (eq: ExamQuestion, index: number) => {
     if (index === currentIndex) return "ring-2 ring-primary";
 
-    if (!markedIds.has(eq.id)) {
+    if (!eq.marked) {
       // unanswered / not yet marked — neutral
       return "bg-muted text-muted-foreground";
     }

@@ -28,6 +28,7 @@ export interface Exam {
   topic: Topic;
   noq: number;
   questions: ExamQuestion[];
+  currentQuestion: number;
   score: number;
 }
 
@@ -45,6 +46,7 @@ export interface ExamQuestion {
   position: number;
   question: string; // id of question
   userAnswer: string; // done....
+  marked: boolean;
 }
 
 // my brain is working at the speed of light...
@@ -85,6 +87,7 @@ export default function Config() {
           topic: currentTopic,
           noq: generatedQuestions.length,
           questions: generatedQuestions,
+          currentQuestion: 0,
           score: 0,
         },
       ],
@@ -215,6 +218,7 @@ const getRandomQuestions = (
     position: index,
     question: q.id,
     userAnswer: "",
+    marked: false
   });
 
   //   just trying not to create duplicates...

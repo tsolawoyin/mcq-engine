@@ -16,7 +16,9 @@ export default function useExam(examId: string) {
   const { id, duration, exams, markInstantly, createdAt } = examSession;
 
   const [currentExam, setCurrentExam] = useImmer(exams[0]);
-  const [questionMap, setQuestionMap] = useState<Map<string, Question>>(new Map());
+  const [questionMap, setQuestionMap] = useState<Map<string, Question>>(
+    new Map(),
+  );
 
   const getDurationSeconds = () => {
     const [h, m, s] = duration.split(":").map(Number);
@@ -75,10 +77,10 @@ export default function useExam(examId: string) {
     finishExam();
   };
 
-//   useEffect(() => {
-//     examSession.exams[0] = currentExam;
-//     localStorage.setItem(examId, JSON.stringify(examSession));
-//   }, [currentExam]);
+  useEffect(() => {
+    examSession.exams[0] = currentExam;
+    localStorage.setItem(examId, JSON.stringify(examSession));
+  }, [currentExam]);
 
   useEffect(() => {
     // collect question IDs across all exams
