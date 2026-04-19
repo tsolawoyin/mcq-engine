@@ -16,7 +16,7 @@ import { Input } from "./ui/input";
 import { CheckCircle2Icon, InfoIcon } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
-import { useApp } from "@/provider/app-provider";
+import { useApp } from "@/app/app-provider";
 import { useRouter } from "next/navigation";
 import { v4 } from "uuid";
 import { Subject } from "@/data/subjects";
@@ -38,7 +38,7 @@ export interface ExamSession {
   exams: Exam[];
   markInstantly: boolean;
   createdAt: Date;
-  finished: boolean
+  finished: boolean;
 }
 
 export interface ExamQuestion {
@@ -52,7 +52,7 @@ export interface ExamQuestion {
 // my brain is working at the speed of light...
 
 export default function Config() {
-  const { subjects, topics } = useApp();
+  const { subjects, topics, db } = useApp();
   //   It will be easy to extend later....
   const [currentSubject, setCurrentSubject] = useState(subjects[0]);
   const [currentTopic, setCurrentTopic] = useState(
@@ -63,7 +63,7 @@ export default function Config() {
   const [numberOfQuestions, setNumberOfQuestions] = useState("");
   const router = useRouter();
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
     const id = v4();
 
     // This will be a list of gettings in the future....
@@ -93,12 +93,16 @@ export default function Config() {
       ],
       markInstantly,
       createdAt: new Date(),
-      finished: false
+      finished: false,
     };
 
-    localStorage.setItem(id, JSON.stringify(examState));
-
-    router.push(`/exam/${id}`);
+    try {
+      // just like adding to local storage without the json parse
+      await db.exam_sessions.add(examState);
+      router.push(`/exam/${id}`);
+    } catch (error) {
+      console.log("An error occured...")
+    }
   };
 
   return (
@@ -218,7 +222,7 @@ const getRandomQuestions = (
     position: index,
     question: q.id,
     userAnswer: "",
-    marked: false
+    marked: false,
   });
 
   //   just trying not to create duplicates...

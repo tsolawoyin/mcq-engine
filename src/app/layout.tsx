@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import AppProvider from "@/provider/app-provider";
+import AppProvider from "@/app/app-provider";
 // Data static for now
 import { subjects } from "@/data/subjects";
 import { topics } from "@/data/topics";

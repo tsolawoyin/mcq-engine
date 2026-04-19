@@ -1,33 +1,66 @@
 "use client";
 import { useState, useEffect, use } from "react";
 import { ParamValue } from "next/dist/server/request/params";
-import { ExamSession } from "@/components/config";
+import { ExamSession, Exam } from "@/components/config";
 import { useImmer } from "use-immer";
 
-import { Question, questions as allQuestions } from "@/data/questions";
+import {
+  Question,
+  questions as allQuestions,
+  questions,
+} from "@/data/questions";
+import { useApp } from "@/app/app-provider";
 
 export default function useExam(examId: string) {
-  let examData = localStorage.getItem(examId);
+  const { db } = useApp();
+  let [examSession, setExamSession] = useState<ExamSession | null>(null);
 
-  if (!examData) return null;
-
-  const examSession: ExamSession = JSON.parse(examData);
-
-  const { id, duration, exams, markInstantly, createdAt } = examSession;
-
-  const [currentExam, setCurrentExam] = useImmer(exams[0]);
+  const [currentExam, setCurrentExam] = useImmer<Exam | null>(null);
   const [questionMap, setQuestionMap] = useState<Map<string, Question>>(
     new Map(),
   );
+  const [timeLeft, setTimeLeft] = useState("00:00:00");
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const fetchSession = async () => {
+      try {
+        const session = await db.exam_sessions.get(examId);
+        if (session) {
+          setExamSession(session);
+          setCurrentExam(session.exams[0]);
+          setSubmitted(session.finished);
+
+          // build question map
+          const allIds = new Set(
+            session.exams.flatMap((exam) =>
+              exam.questions.map((eq) => eq.question),
+            ),
+          );
+          const map = new Map<string, Question>();
+          for (const q of allQuestions) {
+            if (allIds.has(q.id)) map.set(q.id, q);
+          }
+          setQuestionMap(map);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchSession();
+  }, [db, examId]);
 
   const getDurationSeconds = () => {
-    const [h, m, s] = duration.split(":").map(Number);
+    if (!examSession) return 0;
+    const [h, m, s] = examSession.duration.split(":").map(Number);
     return h * 3600 + m * 60 + s;
   };
 
   const calcTimeLeft = () => {
+    if (!examSession) return "00:00:00";
     const elapsed = Math.floor(
-      (Date.now() - new Date(createdAt).getTime()) / 1000,
+      (Date.now() - new Date(examSession.createdAt).getTime()) / 1000,
     );
     const remaining = Math.max(getDurationSeconds() - elapsed, 0);
     const hrs = Math.floor(remaining / 3600);
@@ -36,28 +69,33 @@ export default function useExam(examId: string) {
     return `${String(hrs).padStart(2, "0")}:${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
   };
 
+  // set initial time once session loads
+  useEffect(() => {
+    if (examSession) {
+      setTimeLeft(calcTimeLeft());
+    }
+  }, [examSession]);
+
   const markUp = () => {
     setCurrentExam((draft) => {
-      draft.score += 1;
+      if (draft) draft.score += 1;
     });
   };
 
   const markDown = () => {
     setCurrentExam((draft) => {
-      draft.score -= 1;
+      if (draft) draft.score -= 1;
     });
   };
 
-  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
-  const [submitted, setSubmitted] = useState(examSession.finished);
-
-  const finishExam = () => {
+  const finishExam = async () => {
+    if (!examSession) return;
     examSession.finished = true;
-    localStorage.setItem(examId, JSON.stringify(examSession));
+    await db.exam_sessions.put(examSession);
   };
 
   useEffect(() => {
-    if (submitted) return;
+    if (!examSession || submitted) return;
 
     const interval = setInterval(() => {
       const next = calcTimeLeft();
@@ -65,39 +103,30 @@ export default function useExam(examId: string) {
       if (next === "00:00:00") {
         clearInterval(interval);
         setSubmitted(true);
-        finishExam();
+        void finishExam();
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [submitted]);
+  }, [examSession, submitted]);
 
   const submit = () => {
     setSubmitted(true);
-    finishExam();
+    void finishExam();
   };
 
   useEffect(() => {
+    if (!examSession || !currentExam) return;
     examSession.exams[0] = currentExam;
-    localStorage.setItem(examId, JSON.stringify(examSession));
+    void db.exam_sessions.put(examSession).catch(console.error);
   }, [currentExam]);
 
-  useEffect(() => {
-    // collect question IDs across all exams
-    const allIds = new Set(
-      exams.flatMap((exam) => exam.questions.map((eq) => eq.question)),
-    );
-    const map = new Map<string, Question>();
-    for (const q of allQuestions) {
-      if (allIds.has(q.id)) map.set(q.id, q);
-    }
-    setQuestionMap(map);
-  }, []);
+  if (!examSession || !currentExam) return null;
 
   return {
-    exams,
+    exams: examSession.exams,
     currentExam,
-    setCurrentExam,
+    setCurrentExam: setCurrentExam as import("use-immer").Updater<Exam>,
     timeLeft,
     questionMap,
     markUp,

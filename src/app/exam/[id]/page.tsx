@@ -2,7 +2,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { ExamQuestion } from "@/components/config";
 import { useParams } from "next/navigation";
-import ExamProvider, { useExamContext } from "@/provider/exam-provider";
+import ExamProvider, { useExamContext } from "@/app/exam/[id]/exam-provider";
 import { Button } from "@/components/ui/button";
 import {
   AlertDialog,
@@ -15,7 +15,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import Footer from "@/components/ui/footer";
 
 export default function Page() {
   return (
