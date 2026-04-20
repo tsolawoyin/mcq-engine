@@ -13,7 +13,7 @@ import {
 } from "./ui/select";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { CheckCircle2Icon, InfoIcon } from "lucide-react";
+import { CheckCircle2Icon, InfoIcon, Loader2Icon } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 import { useApp } from "@/app/app-provider";
@@ -22,6 +22,7 @@ import { v4 } from "uuid";
 import { Subject } from "@/data/subjects";
 import { Topic } from "@/data/topics";
 import { Question, questions } from "@/data/questions";
+import Link from "next/link";
 
 export interface Exam {
   subject: Subject;
@@ -62,9 +63,28 @@ export default function Config() {
   const [time, setTime] = useState("");
   const [markInstantly, setMarkInstantly] = useState(true);
   const [numberOfQuestions, setNumberOfQuestions] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState("Cooking...");
   const router = useRouter();
 
+  const loadingMessages = [
+    "Dacing...",
+    "Cooking...",
+    "Brewing...",
+    "Conjuring...",
+    "Summoning...",
+    "Shuffling...",
+    "Crunching...",
+    "Calculating",
+  ];
+
   const handleCreate = async () => {
+    setIsLoading(true);
+    setLoadingText(
+      loadingMessages[Math.floor(Math.random() * loadingMessages.length)],
+    );
+
+    return;
     const id = v4();
 
     // This will be a list of gettings in the future....
@@ -102,7 +122,8 @@ export default function Config() {
       await db.exam_sessions.add(examState);
       router.push(`/exam/${id}`);
     } catch (error) {
-      console.log("An error occured...")
+      console.log("An error occured...");
+      setIsLoading(false);
     }
   };
 
@@ -186,7 +207,10 @@ export default function Config() {
               setTime(time);
             }}
           />
-          <Button onClick={handleCreate}>Start</Button>
+          <Button onClick={handleCreate} disabled={isLoading}>
+            {isLoading && <Loader2Icon className="animate-spin" />}
+            {isLoading ? loadingText : "Start"}
+          </Button>
         </div>
         <Alert className="">
           <InfoIcon />
@@ -196,6 +220,9 @@ export default function Config() {
             selecting the wrong answer
           </AlertDescription>
         </Alert>
+        <Button variant="link" className="w-full underline">
+          <Link href={"/exam"}>View past exams</Link>
+        </Button>
       </div>
     </div>
   );
@@ -214,6 +241,8 @@ const getRandomQuestions = (
   topicId: string,
   count: number,
 ): ExamQuestion[] => {
+  const cap = Math.min(count, 100);
+
   const pool = questions.filter(
     (q) => q.subject === subjectId && q.topic === topicId && q.is_visible,
   );
@@ -236,15 +265,13 @@ const getRandomQuestions = (
     marked: false,
   });
 
-  //   just trying not to create duplicates...
-
-  if (pool.length <= count) return pool.map(toExamQuestion);
-
+  // pick min(cap, available) unique questions via Fisher-Yates
+  const target = Math.min(cap, pool.length);
   const shuffled = [...pool];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
 
-  return shuffled.slice(0, count).map(toExamQuestion);
+  return shuffled.slice(0, target).map(toExamQuestion);
 };
