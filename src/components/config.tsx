@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Label } from "./ui/label";
 import {
   Select,
@@ -67,6 +67,10 @@ export default function Config() {
   const [loadingText, setLoadingText] = useState("Cooking...");
   const router = useRouter();
 
+  useEffect(() => {
+    setIsLoading(false);
+  }, [router]);
+
   const loadingMessages = [
     "Dacing...",
     "Cooking...",
@@ -76,6 +80,7 @@ export default function Config() {
     "Shuffling...",
     "Crunching...",
     "Calculating",
+    "Dillydallying"
   ];
 
   const handleCreate = async () => {
@@ -83,7 +88,7 @@ export default function Config() {
     setLoadingText(
       loadingMessages[Math.floor(Math.random() * loadingMessages.length)],
     );
-    
+
     const id = v4();
 
     // This will be a list of gettings in the future....
