@@ -134,7 +134,7 @@ export default function Config() {
   return (
     <div className="flex-2 grid items-center">
       <div className="grid gap-5">
-        <p className="text-center text-2xl font-bold">DAC</p>
+        <p className="text-center text-2xl font-bold">D💀C</p>
         <div className="grid gap-3">
           <Select
             value={currentSubject.id}
