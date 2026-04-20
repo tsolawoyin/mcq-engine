@@ -7,6 +7,7 @@ import AppProvider from "@/app/app-provider";
 import { subjects } from "@/data/subjects";
 import { topics } from "@/data/topics";
 import { questions } from "@/data/questions";
+import { ThemeProvider } from "@/components/theme-store";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -51,11 +52,22 @@ export default function RootLayout({
     >
       {/* nice one... */}
       <body>
-        <AppProvider subjects={subjects} topics={topics} questions={questions}>
-          <div className="h-dvh flex flex-col max-w-3xl m-auto p-3">
-            {children}
-          </div>
-        </AppProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AppProvider
+            subjects={subjects}
+            topics={topics}
+            questions={questions}
+          >
+            <div className="h-dvh flex flex-col max-w-3xl m-auto p-3">
+              {children}
+            </div>
+          </AppProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

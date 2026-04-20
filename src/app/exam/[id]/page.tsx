@@ -168,7 +168,7 @@ function RenderQuestion() {
           onJump={jumpTo}
         />
         {/* <Footer /> */}
-        <p className="fixed bottom-0 mt-auto w-full bg-white py-3 text-center text-xs text-muted-foreground">
+        <p className="fixed bottom-0 mt-auto w-full bg-background py-3 text-center text-xs text-muted-foreground">
           Spot an error?{" "}
           <a
             href="https://wa.me/2348162200772"
@@ -279,15 +279,13 @@ function QuestionNav({
   return (
     <div className="flex flex-wrap gap-2">
       {questions.map((eq, index) => (
-        <Button
+        <button
           key={eq.id}
-          variant="outline"
-          size="sm"
-          className={`h-8 w-8 p-0 ${getKeyStyle(eq, index)}`}
+          className={`flex h-8 w-8 items-center justify-center rounded-md border text-sm font-medium transition-colors hover:opacity-80 ${getKeyStyle(eq, index)}`}
           onClick={() => onJump(index)}
         >
           {index + 1}
-        </Button>
+        </button>
       ))}
     </div>
   );
