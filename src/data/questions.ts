@@ -1646,4 +1646,848 @@ export const questions = [
       "Metatarsal I belongs to the metatarsals, not the tarsals. The 7 tarsals are: calcaneum, talus, navicular, cuboid, and 3 cuneiforms.",
     is_visible: true,
   },
+  {
+    id: "ga101-apot001-001",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "What is the primary function of the lower limb?",
+    options: [
+      "Sensory reception and balance",
+      "Support body weight and provide stable foundation for standing, walking and running",
+      "Thermoregulation and lymphatic drainage",
+      "Facilitate upper limb movement",
+    ],
+    answer:
+      "Support body weight and provide stable foundation for standing, walking and running",
+    explanation:
+      "The primary functions of the lower limb are to support the weight of the body and provide a stable foundation in standing, walking, and running.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-002",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Into how many regions is the lower limb divided?",
+    options: ["4", "5", "6", "7"],
+    answer: "6",
+    explanation:
+      "The lower limb is divided into 6 regions: gluteal, thigh, knee, leg, ankle, and foot.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-003",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The deep fascia of the thigh is called the fascia lata.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The deep fascia of the thigh is specifically named the fascia lata.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-004",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "How many fascial septa pass from the inner aspect of the deep fascial sheath of the thigh to the linea aspera of the femur?",
+    options: ["2", "3", "4", "5"],
+    answer: "3",
+    explanation:
+      "3 fascial septa pass from the inner aspect of the deep fascial sheath to the linea aspera of the femur, dividing the thigh into 3 compartments.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-005",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The fascial septa of the thigh attach to the linea aspera of the femur.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The 3 fascial septa pass from the inner aspect of the deep fascial sheath to the linea aspera of the femur.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-006",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Into how many compartments does the fascia lata divide the thigh?",
+    options: ["2", "3", "4", "5"],
+    answer: "3",
+    explanation:
+      "The fascial septa divide the thigh into 3 compartments: anterior, medial, and posterior.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-007",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which of the following correctly lists the three fascial compartments of the thigh?",
+    options: [
+      "Superior, inferior, and lateral",
+      "Anterior, medial, and posterior",
+      "Medial, lateral, and posterior",
+      "Anterior, posterior, and lateral",
+    ],
+    answer: "Anterior, medial, and posterior",
+    explanation:
+      "The thigh is divided into anterior, medial, and posterior fascial compartments, each with its own muscles, nerves, and vessels.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-008",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: Each fascial compartment of the thigh has its own nerves, muscles, and vessels.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Each of the three fascial compartments of the thigh has its own dedicated nerves, muscles, and vessels.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-009",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Which nerve supplies the anterior compartment of the thigh?",
+    options: [
+      "Obturator nerve",
+      "Sciatic nerve",
+      "Femoral nerve",
+      "Tibial nerve",
+    ],
+    answer: "Femoral nerve",
+    explanation:
+      "The anterior compartment of the thigh is supplied by the femoral nerve (L2, 3, 4 posterior division).",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-010",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The femoral nerve arises from the posterior division of L2, 3, and 4.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The femoral nerve supplying the anterior compartment arises from the posterior division of L2, 3, 4.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-011",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Which nerve supplies the medial compartment of the thigh?",
+    options: [
+      "Femoral nerve",
+      "Obturator nerve",
+      "Sciatic nerve",
+      "Saphenous nerve",
+    ],
+    answer: "Obturator nerve",
+    explanation:
+      "The medial compartment of the thigh is supplied by the obturator nerve (L2, 3, 4 anterior division).",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-012",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The obturator nerve arises from the anterior division of L2, 3, and 4.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The obturator nerve supplying the medial compartment arises from the anterior division of L2, 3, 4 — contrasting with the femoral nerve which comes from the posterior division.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-013",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Which nerve supplies the posterior compartment of the thigh?",
+    options: [
+      "Femoral nerve",
+      "Obturator nerve",
+      "Sciatic nerve",
+      "Common peroneal nerve",
+    ],
+    answer: "Sciatic nerve",
+    explanation:
+      "The posterior compartment is supplied by the sciatic nerve (L4, 5, S1, 2, 3) which has tibial and peroneal divisions.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-014",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The sciatic nerve has spinal root values of L4, 5, S1, 2, 3.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The sciatic nerve supplying the posterior compartment has spinal root values of L4, 5, S1, 2, 3 and consists of tibial and peroneal components.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-015",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "How many named muscles does the lower limb have in total according to the slide?",
+    options: ["41", "47", "51", "55"],
+    answer: "51",
+    explanation:
+      "The slide states that the nerves of the lower limb supply 51 named muscles of the lower limb.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-016",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which of the following is described as a hybrid muscle of the lower limb receiving supply from two nerves?",
+    options: ["Rectus femoris", "Pectineus", "Sartorius", "Gracilis"],
+    answer: "Pectineus",
+    explanation:
+      "Pectineus is a hybrid muscle supplied by two nerves: the femoral nerve and the obturator nerve.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-017",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The adductor magnus is supplied by two nerves — the tibial and obturator nerves.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Adductor magnus is a hybrid muscle with two parts, supplied by two nerves: the tibial and obturator nerves.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-018",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Biceps femoris is described as a hybrid muscle with two heads. Which two nerves supply it?",
+    options: [
+      "Femoral and obturator",
+      "Tibial and peroneal",
+      "Sciatic and femoral",
+      "Obturator and tibial",
+    ],
+    answer: "Tibial and peroneal",
+    explanation:
+      "Biceps femoris has two heads and is supplied by two nerves: the tibial nerve (long head) and the peroneal nerve (short head).",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-019",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which of the following muscles is NOT listed as a content of the anterior fascial compartment of the thigh?",
+    options: ["Sartorius", "Iliacus", "Gracilis", "Pectineus"],
+    answer: "Gracilis",
+    explanation:
+      "Gracilis is a muscle of the medial compartment, not the anterior. The anterior compartment contains Sartorius, Iliacus, Psoas, Pectineus, and the Quadriceps femoris group.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-020",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The quadriceps femoris consists of rectus femoris, vastus lateralis, vastus medialis, and vastus intermedius.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The quadriceps femoris group in the anterior compartment consists of these four muscles: rectus femoris, vastus lateralis, vastus medialis, and vastus intermedius.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-021",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "What is the blood supply to the anterior fascial compartment of the thigh?",
+    options: [
+      "Obturator artery",
+      "Femoral artery",
+      "Popliteal artery",
+      "Internal iliac artery",
+    ],
+    answer: "Femoral artery",
+    explanation:
+      "The blood supply to the anterior fascial compartment of the thigh is the femoral artery.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-022",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The femoral artery is a branch of the external iliac artery.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The femoral artery is a branch of the external iliac artery and is the main arterial supply to the thigh.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-023",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which artery gives rise to the lateral femoral circumflex, medial femoral circumflex, and 4 perforating arteries?",
+    options: [
+      "Femoral artery",
+      "Profunda femoris artery",
+      "Popliteal artery",
+      "Obturator artery",
+    ],
+    answer: "Profunda femoris artery",
+    explanation:
+      "The profunda femoris artery gives off the lateral femoral circumflex (LFC), medial femoral circumflex (MFC), and 4 perforating arteries.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-024",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "How many perforating arteries does the profunda femoris give off?",
+    options: ["2", "3", "4", "5"],
+    answer: "4",
+    explanation:
+      "The profunda femoris artery gives off 4 perforating arteries in addition to the lateral and medial femoral circumflex arteries.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-025",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The cruciate anastomosis around the hip joint is formed by the LFC, MFC, superior gluteal artery, and the 1st perforating artery.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The cruciate anastomosis around the hip joint is formed by the lateral femoral circumflex (LFC), medial femoral circumflex (MFC), superior gluteal artery (SG), and the 1st perforating artery (PA).",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-026",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "What are the two veins responsible for venous drainage of the thigh?",
+    options: [
+      "Femoral and obturator veins",
+      "Popliteal and femoral veins",
+      "Great saphenous and small saphenous veins",
+      "Femoral and great saphenous veins",
+    ],
+    answer: "Popliteal and femoral veins",
+    explanation:
+      "Venous drainage of the thigh is via the popliteal and femoral veins.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-027",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "How many main types of veins exist in the lower limb?",
+    options: ["2", "3", "4", "5"],
+    answer: "3",
+    explanation:
+      "There are 3 main types of veins in the lower limb: superficial veins, deep veins, and perforating veins.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-028",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: Perforating veins communicate between the superficial and deep veins of the lower limb.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Perforating veins are communicating veins that run between the superficial and deep veins of the lower limb.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-029",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which of the following is described as the longest vein in the body?",
+    options: [
+      "Small saphenous vein",
+      "Femoral vein",
+      "Great saphenous vein",
+      "Popliteal vein",
+    ],
+    answer: "Great saphenous vein",
+    explanation:
+      "The great saphenous vein (GSV) is described as the longest vein in the body.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-030",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "How many valves does the great saphenous vein have?",
+    options: ["5-10", "10-20", "20-30", "1-5"],
+    answer: "10-20",
+    explanation:
+      "The great saphenous vein has 10-20 valves that permit blood flow from the superficial into the deep veins.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-031",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The valves of the great saphenous vein permit blood flow from the superficial veins into the deep veins.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The 10-20 valves of the GSV permit blood flow from the superficial into the deep veins. Incompetence of these valves leads to varicose veins.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-032",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Where does the great saphenous vein drain into?",
+    options: [
+      "Popliteal vein",
+      "External iliac vein",
+      "Femoral vein at the fossa ovalis",
+      "Small saphenous vein",
+    ],
+    answer: "Femoral vein at the fossa ovalis",
+    explanation:
+      "The great saphenous vein is continuous with the femoral vein at the fossa ovalis.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-033",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which of the following is NOT a tributary of the great saphenous vein?",
+    options: [
+      "Superficial circumflex vein",
+      "Superficial epigastric vein",
+      "Superficial external pudendal vein",
+      "Deep femoral vein",
+    ],
+    answer: "Deep femoral vein",
+    explanation:
+      "The GSV receives the superficial circumflex vein, superficial epigastric vein, and superficial external pudendal vein as tributaries. The deep femoral vein is not a tributary of the GSV.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-034",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: Incompetence of the valves of the great saphenous vein leads to varicose veins.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Incompetence of the valves of the GSV allows blood to flow in the wrong direction, leading to varicose veins of the lower limb.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-035",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "What are venae comitantes?",
+    options: [
+      "Superficial veins of the lower limb",
+      "Medium-sized deep arteries each accompanied by two veins, one on each side",
+      "Perforating veins connecting superficial and deep systems",
+      "Tributaries of the great saphenous vein",
+    ],
+    answer:
+      "Medium-sized deep arteries each accompanied by two veins, one on each side",
+    explanation:
+      "Venae comitantes are medium-sized deep arteries accompanied by 2 veins, one on each side, forming part of the deep venous system.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-036",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "The fossa ovalis is also known by which two other names?",
+    options: [
+      "Femoral ring and femoral canal",
+      "Saphenous opening and saphenous hiatus",
+      "Cribriform fascia and falciform margin",
+      "Femoral sheath and femoral canal",
+    ],
+    answer: "Saphenous opening and saphenous hiatus",
+    explanation:
+      "The fossa ovalis is the same structure as the saphenous opening and the saphenous hiatus — three names for the same opening.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-037",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The fossa ovalis is located in the proximal anterior part of the thigh.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The fossa ovalis is located in the proximal anterior part of the thigh, within the femoral sheath.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-038",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "How far below and lateral to the pubic tubercle does the fossa ovalis lie?",
+    options: ["2cm", "3cm", "4cm", "5cm"],
+    answer: "4cm",
+    explanation:
+      "The fossa ovalis lies 4cm below and lateral to the pubic tubercle, within the femoral sheath.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-039",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "What creates the fossa ovalis?",
+    options: [
+      "The femoral artery passing through the fascia lata",
+      "The great saphenous vein as it drains into the femoral vein",
+      "The femoral nerve piercing the fascia lata",
+      "The profunda femoris artery branching off the femoral artery",
+    ],
+    answer: "The great saphenous vein as it drains into the femoral vein",
+    explanation:
+      "The fossa ovalis is created by the great saphenous vein as it pours its contents into the femoral vein.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-040",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The fossa ovalis is filled with loose connective tissue called the cribriform fascia.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The fossa ovalis opening is filled with loose connective tissue called the cribriform fascia.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-041",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "What is the adductor canal also known as?",
+    options: [
+      "Femoral canal",
+      "Subsartorial canal",
+      "Hunter's groove",
+      "Obturator canal",
+    ],
+    answer: "Subsartorial canal",
+    explanation:
+      "The adductor canal is also called the subsartorial canal because it lies beneath the sartorius muscle.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-042",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The adductor canal is situated on the medial aspect of the middle third of the thigh.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The adductor canal is an intermuscular cleft situated on the medial aspect of the middle third of the thigh, beneath the sartorius muscle.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-043",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "The adductor canal lies beneath which muscle?",
+    options: [
+      "Rectus femoris",
+      "Vastus medialis",
+      "Sartorius",
+      "Adductor longus",
+    ],
+    answer: "Sartorius",
+    explanation:
+      "The adductor canal is situated beneath the sartorius muscle, which is why it is also called the subsartorial canal.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-044",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Where does the adductor canal commence superiorly?",
+    options: [
+      "At the inguinal ligament",
+      "At the apex of the femoral triangle",
+      "At the fossa ovalis",
+      "At the lesser trochanter",
+    ],
+    answer: "At the apex of the femoral triangle",
+    explanation:
+      "The adductor canal commences from the apex of the femoral triangle above and ends below at the opening in the adductor magnus.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-045",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Where does the adductor canal end inferiorly?",
+    options: [
+      "At the popliteal fossa",
+      "At the opening in the adductor magnus",
+      "At the medial condyle of the femur",
+      "At the knee joint",
+    ],
+    answer: "At the opening in the adductor magnus",
+    explanation:
+      "The adductor canal ends below at the opening in the adductor magnus, through which the femoral vessels pass to become the popliteal vessels.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-046",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The adductor canal is triangular in cross section.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The adductor canal is triangular in cross section with anteromedial, posterior, and lateral walls.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-047",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Which muscle forms the anteromedial wall of the adductor canal?",
+    options: [
+      "Adductor magnus",
+      "Vastus medialis",
+      "Sartorius",
+      "Adductor longus",
+    ],
+    answer: "Sartorius",
+    explanation:
+      "The anteromedial wall of the adductor canal is formed by the sartorius muscle (S).",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-048",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Which muscles form the posterior wall of the adductor canal?",
+    options: [
+      "Sartorius and vastus medialis",
+      "Adductor magnus and adductor longus",
+      "Rectus femoris and adductor longus",
+      "Gracilis and adductor magnus",
+    ],
+    answer: "Adductor magnus and adductor longus",
+    explanation:
+      "The posterior wall of the adductor canal is formed by adductor magnus (AM) and adductor longus (AL).",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-049",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Which muscle forms the lateral wall of the adductor canal?",
+    options: [
+      "Sartorius",
+      "Adductor magnus",
+      "Vastus medialis",
+      "Rectus femoris",
+    ],
+    answer: "Vastus medialis",
+    explanation:
+      "The lateral wall of the adductor canal is formed by vastus medialis (VM).",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-050",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which of the following is a content of the femoral triangle found within the femoral sheath?",
+    options: [
+      "Femoral nerve",
+      "Deep inguinal lymph nodes",
+      "Femoral canal",
+      "Genitofemoral nerve",
+    ],
+    answer: "Femoral canal",
+    explanation:
+      "The femoral sheath contains the femoral artery, femoral canal, and femoral vein with its tributaries. The femoral nerve lies outside the femoral sheath.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-051",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The femoral nerve lies within the femoral sheath.",
+    options: ["True", "False"],
+    answer: "False",
+    explanation:
+      "The femoral nerve lies outside the femoral sheath. The femoral sheath contains the femoral artery, femoral canal, and femoral vein.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-052",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which of the following is NOT a content of the femoral triangle?",
+    options: [
+      "Femoral sheath and its contents",
+      "Femoral nerve and its branches",
+      "Deep inguinal lymph nodes",
+      "Obturator nerve",
+    ],
+    answer: "Obturator nerve",
+    explanation:
+      "The obturator nerve is not a content of the femoral triangle. The femoral triangle contains the femoral sheath and contents, femoral nerve and branches, nerve to pectineus, lateral cutaneous nerve of thigh, deep inguinal lymph nodes, and the femoral branch of the genitofemoral nerve.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-053",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The deep inguinal lymph nodes are contents of the femoral triangle.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The deep inguinal lymph nodes are listed as a content of the femoral triangle.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-054",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "The superficial inguinal lymph nodes are arranged in which two groups?",
+    options: [
+      "Superior and inferior",
+      "Horizontal and vertical",
+      "Medial and lateral",
+      "Deep and superficial",
+    ],
+    answer: "Horizontal and vertical",
+    explanation:
+      "The superficial inguinal lymph nodes are arranged in a horizontal group and a vertical group.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-055",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: Groin swellings involving lymph nodes can be due to infections in the leg.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The slide states that groin swellings involving lymph nodes may be due to leg infections, since the inguinal nodes drain the lower limb.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-056",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: Femoral herniae are more common in females because the femoral canal is larger in females due to the greater width of their pelvis.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Femoral canals are larger in females due to the greater width of their pelvis, making femoral herniae more common in females.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-057",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question: "Through which opening does an inguinal hernia protrude?",
+    options: [
+      "Deep inguinal ring",
+      "Femoral ring",
+      "Superficial inguinal ring",
+      "Saphenous opening",
+    ],
+    answer: "Superficial inguinal ring",
+    explanation:
+      "The slide states that an inguinal hernia protrudes through the superficial inguinal ring.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-058",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which bony landmark of the anterior thigh is formed by the junction of the two pubic bones?",
+    options: [
+      "Pubic tubercle",
+      "Pubic crest",
+      "Symphysis pubis",
+      "Iliac tubercle",
+    ],
+    answer: "Symphysis pubis",
+    explanation:
+      "The symphysis pubis is the cartilaginous joint formed at the junction of the two pubic bones and is a bony landmark of the anterior thigh.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-059",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "True or False: The GSV communicates with the medial plantar veins, anterior tibial veins, and tributaries of the posterior tibial veins.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "The GSV communicates with the medial plantar veins, anterior tibial veins, and tributaries of the posterior tibial veins as part of the superficial venous network.",
+    is_visible: true,
+  },
+  {
+    id: "ga101-apot001-060",
+    subject: "gross-anatomy-101",
+    topic: "anterior-part-of-the-thigh-001",
+    question:
+      "Which of the following statements best distinguishes the femoral triangle from the adductor canal?",
+    options: [
+      "The femoral triangle is deep to the sartorius while the adductor canal is superficial to it",
+      "The femoral triangle is in the proximal thigh and contains femoral vessels and nerve; the adductor canal is in the middle third of the thigh and transmits vessels beneath the sartorius",
+      "The femoral triangle transmits only the femoral nerve while the adductor canal transmits only the femoral artery",
+      "They are different names for the same structure",
+    ],
+    answer:
+      "The femoral triangle is in the proximal thigh and contains femoral vessels and nerve; the adductor canal is in the middle third of the thigh and transmits vessels beneath the sartorius",
+    explanation:
+      "The femoral triangle is in the proximal thigh containing femoral vessels, nerve, and lymphatics. The adductor canal begins at the apex of the femoral triangle and runs in the middle third of the thigh beneath the sartorius, transmitting the femoral vessels downward.",
+    is_visible: true,
+  },
 ];

@@ -20,4 +20,9 @@ export const topics: Topic[] = [
     name: "Ostelogy of Lower Limb - Foot",
     subject: "gross-anatomy-101",
   },
+  {
+    id: "anterior-part-of-the-thigh-001",
+    name: "Anterior part of the Thigh",
+    subject: "gross-anatomy-101",
+  },
 ];
