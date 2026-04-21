@@ -233,7 +233,7 @@ const QuestionInt = ({
         {(examQ.shuffledOptions ?? question.options).map((option) => (
           <button
             key={option}
-            className={`w-full rounded-md border border-border bg-background px-3 py-2 text-left text-sm font-medium shadow-xs transition-all hover:bg-muted ${getOptionStyle(option)}`}
+            className={`w-full rounded-md border border-border bg-background px-3 py-2 text-left text-sm font-medium shadow-xs transition-all ${getOptionStyle(option)}`}
             onClick={() => selectAnswer(option)}
           >
             {option}
