@@ -8,6 +8,7 @@ import { subjects } from "@/data/subjects";
 import { topics } from "@/data/topics";
 import { questions } from "@/data/questions";
 import { ThemeProvider } from "@/components/theme-store";
+import Header from "@/components/ui/header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -64,6 +65,7 @@ export default function RootLayout({
             questions={questions}
           >
             <div className="h-dvh flex flex-col max-w-3xl m-auto p-3">
+              <Header />
               {children}
             </div>
           </AppProvider>

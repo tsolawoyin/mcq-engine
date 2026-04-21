@@ -28,7 +28,11 @@ export default function useExam(examId: string) {
         const session = await db.exam_sessions.get(examId);
         if (session) {
           setExamSession(session);
-          setCurrentExam(session.exams[0]);
+          // use currentExam id to find the right exam, fallback to exams[0] for old sessions
+          const active = session.currentExam
+            ? session.exams.find((e) => e.id === session.currentExam)
+            : undefined;
+          setCurrentExam(active || session.exams[0]);
           setSubmitted(session.finished);
 
           // build question map
@@ -117,7 +121,11 @@ export default function useExam(examId: string) {
 
   useEffect(() => {
     if (!examSession || !currentExam) return;
-    examSession.exams[0] = currentExam;
+    // persist to the correct exam by id, fallback to index 0 for old sessions
+    const idx = currentExam.id
+      ? examSession.exams.findIndex((e) => e.id === currentExam.id)
+      : 0;
+    examSession.exams[idx === -1 ? 0 : idx] = currentExam;
     void db.exam_sessions.put(examSession).catch(console.error);
   }, [currentExam]);
 

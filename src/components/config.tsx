@@ -1,19 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Label } from "./ui/label";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { CheckCircle2Icon, InfoIcon, Loader2Icon } from "lucide-react";
+import { InfoIcon, Loader2Icon, Plus, X } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 import { useApp } from "@/app/app-provider";
@@ -24,11 +22,13 @@ import { Topic } from "@/data/topics";
 import { Question, questions } from "@/data/questions";
 import Link from "next/link";
 import { ModeToggle } from "./toggler";
+import { useImmer, Updater } from "use-immer";
 
 export interface Exam {
+  id: string;
   subject: Subject;
   topic: Topic;
-  noq: number;
+  noq: string; //but meant to be number but having issue with 0 in input element
   questions: ExamQuestion[];
   currentQuestion: number;
   score: number;
@@ -38,6 +38,7 @@ export interface ExamSession {
   id: string;
   duration: string;
   exams: Exam[];
+  currentExam: string;
   markInstantly: boolean;
   createdAt: Date;
   finished: boolean;
@@ -57,13 +58,21 @@ export interface ExamQuestion {
 export default function Config() {
   const { subjects, topics, db } = useApp();
   //   It will be easy to extend later....
-  const [currentSubject, setCurrentSubject] = useState(subjects[0]);
-  const [currentTopic, setCurrentTopic] = useState(
-    topics.filter((topic) => topic.subject == currentSubject.id)[0], // then select the first...
-  );
+  const firstSubject = subjects[0];
+  const [selections, setSelections] = useImmer<Exam[]>([
+    {
+      id: v4(),
+      subject: firstSubject,
+      topic: topics.filter((topic) => topic.subject == firstSubject.id)[0],
+      noq: "",
+      questions: [],
+      currentQuestion: 0,
+      score: 0,
+    },
+  ]);
+
   const [time, setTime] = useState("");
   const [markInstantly, setMarkInstantly] = useState(true);
-  const [numberOfQuestions, setNumberOfQuestions] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState("Cooking...");
   const router = useRouter();
@@ -84,6 +93,14 @@ export default function Config() {
     "Dillydallying",
   ];
 
+  const canStart =
+    selections.length > 0 &&
+    selections.every((s) => {
+      const n = parseInt(s.noq, 10);
+      return !isNaN(n) && n >= 1 && n <= 100;
+    }) &&
+    time !== "";
+
   const handleCreate = async () => {
     setIsLoading(true);
     setLoadingText(
@@ -92,31 +109,26 @@ export default function Config() {
 
     const id = v4();
 
-    // This will be a list of gettings in the future....
-    const generatedQuestions = getRandomQuestions(
-      currentSubject.id,
-      currentTopic.id,
-      numberOfQuestions ? Number(numberOfQuestions) : 20,
-    );
-    // actually, at this point user is fully ready to start...
-    // so we create questions here too...
-    // This structure is to enable future extensibility of the software.
-    // To support multiple exams in one exam session. Shey you get...
+    // generate questions for each selection
+    const exams: Exam[] = selections.map((sel) => {
+      const noq = Math.min(parseInt(sel.noq, 10) || 20, 100);
+      const generated = getRandomQuestions(sel.subject.id, sel.topic.id, noq);
+      return {
+        id: v4(),
+        subject: sel.subject,
+        topic: sel.topic,
+        noq: String(generated.length),
+        questions: generated,
+        currentQuestion: 0,
+        score: 0,
+      };
+    });
 
     const examState: ExamSession = {
       id,
       duration: time ? `${convertTime(time)}` : "00:20:00", // default to 20...
-      exams: [
-        // each exam is a subject-topic combo... exactly.
-        {
-          subject: currentSubject,
-          topic: currentTopic,
-          noq: generatedQuestions.length,
-          questions: generatedQuestions,
-          currentQuestion: 0,
-          score: 0,
-        },
-      ],
+      exams,
+      currentExam: exams[0].id,
       markInstantly,
       createdAt: new Date(),
       finished: false,
@@ -134,78 +146,41 @@ export default function Config() {
 
   return (
     <div className="flex-2 grid items-center">
-      <div className="absolute top-3 right-3">
-        <ModeToggle />
-      </div>
       <div className="grid gap-5">
-        <p className="text-center text-2xl font-bold">D💀C</p>
+        {selections.map((selection, index) => {
+          return (
+            <SelectionInt
+              key={index}
+              index={index}
+              selection={selection}
+              setSelections={setSelections}
+              canRemove={selections.length > 1}
+            />
+          );
+        })}
+        {/* Exactly... */}
+        <button
+          className="flex w-full items-center justify-center gap-1.5 rounded-[14px] border-[1.5px] border-dashed border-muted-foreground/30 py-3.5 text-sm text-muted-foreground transition-colors active:bg-muted/50"
+          onClick={() => {
+            setSelections((draft) => {
+              draft.push({
+                id: v4(),
+                subject: firstSubject,
+                topic: topics.filter(
+                  (topic) => topic.subject == firstSubject.id,
+                )[0],
+                noq: "",
+                questions: [],
+                currentQuestion: 0,
+                score: 0,
+              });
+            });
+          }}
+        >
+          <Plus className="h-3 w-3" />
+          Add combination
+        </button>
         <div className="grid gap-3">
-          <Select
-            value={currentSubject.id}
-            onValueChange={(value) => {
-              let sub = subjects.find((subject) => subject.id == value);
-              if (sub) {
-                let firstTopic = topics.filter(
-                  (topic) => topic.subject == sub.id,
-                )[0];
-                if (firstTopic) setCurrentTopic(firstTopic);
-                else {
-                  setCurrentTopic({
-                    id: "",
-                    name: "",
-                    subject: sub.id,
-                  });
-                }
-                setCurrentSubject(sub);
-              }
-
-              // It's actually not possible for subject not to exist. So no need to handle the other case.
-            }}
-          >
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a course" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {subjects.map((subject) => {
-                  return (
-                    <SelectItem value={subject.id}>{subject.name}</SelectItem>
-                  );
-                })}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-          <Select
-            value={currentTopic.id}
-            onValueChange={(value) => {
-              let top = topics.find((top) => top.id == value);
-              if (top) setCurrentTopic(top);
-            }}
-          >
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a topic" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {topics
-                  .filter((topic) => topic.subject == currentSubject.id)
-                  .map((topic) => {
-                    return (
-                      <SelectItem value={topic.id}>{topic.name}</SelectItem>
-                    );
-                  })}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-          <Input
-            placeholder="Enter number of questions 1 - 100"
-            type="number"
-            value={numberOfQuestions}
-            onChange={(e) => {
-              const noq = e.target.value;
-              setNumberOfQuestions(noq);
-            }}
-          />
           <Input
             placeholder="Enter time in minutes"
             type="number"
@@ -215,9 +190,11 @@ export default function Config() {
               setTime(time);
             }}
           />
-          <Button onClick={handleCreate} disabled={isLoading}>
+          <Button onClick={handleCreate} disabled={isLoading || !canStart}>
             {isLoading && <Loader2Icon className="animate-spin" />}
-            {isLoading ? loadingText : "Start"}
+            {isLoading
+              ? loadingText
+              : `Start${selections.length > 1 ? ` ${selections.length} Exams` : ""}`}
           </Button>
         </div>
         <Alert className="">
@@ -233,6 +210,109 @@ export default function Config() {
         </Button>
         {/* <p>No data is collected in this app. YOUR RESULTS REMAIN ON YOUR PHONE. No one can view it.</p> */}
       </div>
+    </div>
+  );
+}
+
+function SelectionInt({
+  selection,
+  index,
+  setSelections,
+  canRemove,
+}: {
+  selection: Exam;
+  index: number;
+  setSelections: Updater<Exam[]>;
+  canRemove: boolean;
+}) {
+  const { subjects, topics } = useApp();
+
+  return (
+    <div className="relative grid gap-3 rounded-2xl border bg-card p-3">
+      {canRemove && (
+        <button
+          className="absolute -top-2.5 -right-2.5 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-background bg-red-500 text-xs font-bold text-white"
+          onClick={() => {
+            setSelections((draft) => {
+              draft.splice(index, 1);
+            });
+          }}
+        >
+          <X className="h-3 w-3" />
+        </button>
+      )}
+      <Select
+        value={selection.subject.id}
+        onValueChange={(value) => {
+          const sub = subjects.find((subject) => subject.id == value);
+          if (sub) {
+            const firstTopic = topics.filter(
+              (topic) => topic.subject == sub.id,
+            )[0];
+            setSelections((draft) => {
+              draft[index].subject = sub;
+              draft[index].topic = firstTopic || {
+                id: "",
+                name: "",
+                subject: sub.id,
+              };
+            });
+          }
+        }}
+      >
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="Select a course" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {subjects.map((subject) => {
+              return (
+                <SelectItem key={subject.id} value={subject.id}>
+                  {subject.name}
+                </SelectItem>
+              );
+            })}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+      <Select
+        value={selection.topic.id}
+        onValueChange={(value) => {
+          const top = topics.find((top) => top.id == value);
+          if (top) {
+            setSelections((draft) => {
+              draft[index].topic = top;
+            });
+          }
+        }}
+      >
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="Select a topic" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {topics
+              .filter((topic) => topic.subject == selection.subject.id)
+              .map((topic) => {
+                return (
+                  <SelectItem key={topic.id} value={topic.id}>
+                    {topic.name}
+                  </SelectItem>
+                );
+              })}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+      <Input
+        placeholder="Enter number of questions 1 - 100"
+        type="number"
+        value={selection.noq}
+        onChange={(e) => {
+          setSelections((draft) => {
+            draft[index].noq = e.target.value;
+          });
+        }}
+      />
     </div>
   );
 }

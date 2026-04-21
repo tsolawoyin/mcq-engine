@@ -14,3 +14,9 @@ db.version(2).stores({
   exam_sessions: "id, createdAt",
   questions: "id"
 });
+
+// v3: Exam gets its own id, ExamSession gets currentExam
+db.version(3).stores({
+  exam_sessions: "id, createdAt",
+  questions: "id"
+});

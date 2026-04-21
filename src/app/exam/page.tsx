@@ -54,7 +54,7 @@ function isExamTimeElapsed(exam: ExamSession): boolean {
 function ExamInt({ exam }: { exam: ExamSession }) {
   const { db } = useApp();
   const firstExam = exam.exams[0];
-  const totalQuestions = firstExam?.noq ?? 0;
+  const totalQuestions = Number(firstExam?.noq ?? 0);
   const score = firstExam?.score ?? 0;
   const date = new Date(exam.createdAt);
 

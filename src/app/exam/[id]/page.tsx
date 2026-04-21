@@ -35,15 +35,35 @@ function ExamPage() {
 }
 
 function ExamContent() {
-  const { timeLeft, currentExam, questionMap } = useExamContext();
+  const { timeLeft, currentExam, questionMap, exams, setCurrentExam } =
+    useExamContext();
 
   return (
     <div className="grid flex-1 grid-rows-[auto_1fr] gap-5 pb-15">
+      {/* this is the only thing that needs fixing */}
+      {/* <div>
+        {exams.map((exam) => {
+          return (
+            <div
+              onClick={() => {
+                console.log("hello");
+                // now let's switch things up
+                setCurrentExam((draft) => {
+                  draft = exam;
+                  return draft;
+                });
+              }}
+            >
+              {exam.subject.name}-{exam.topic.name}
+            </div>
+          );
+        })}
+      </div> */}
       <div className="flex justify-between text-2xl items-center">
         <div>{timeLeft}</div>
         <div className="text-red-600 text-3xl">
-          {currentExam.noq > 0
-            ? Math.round((currentExam.score / currentExam.noq) * 100)
+          {Number(currentExam.noq) > 0
+            ? Math.round((currentExam.score / Number(currentExam.noq)) * 100)
             : 0}
           %
         </div>
