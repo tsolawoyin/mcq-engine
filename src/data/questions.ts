@@ -2491,1027 +2491,1025 @@ export const questions = [
     is_visible: true,
   },
   {
-    id: "001",
+    id: "hr-001",
     subject: "physiology-101",
     topic: "cardiovascular-system-001",
-    question: "Which structure is known as the normal pacemaker of the heart?",
-    options: ["AV node", "Purkinje fibers", "SA node", "Bundle of His"],
+    question: "Heart rate is defined as:",
+    options: [
+      "Amount of blood pumped in one minute",
+      "Number of heart beats per minute",
+      "Force of ventricular contraction",
+      "Amount of blood in the atria",
+    ],
+    answer: "Number of heart beats per minute",
+    explanation:
+      "Heart rate refers to the number of times the heart beats in one minute.",
+    is_visible: true,
+  },
+  {
+    id: "hr-002",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "The normal resting heart rate in adults is:",
+    options: [
+      "20–40 beats/min",
+      "40–60 beats/min",
+      "60–100 beats/min",
+      "100–140 beats/min",
+    ],
+    answer: "60–100 beats/min",
+    explanation:
+      "The normal adult resting heart rate is between 60 and 100 beats per minute.",
+    is_visible: true,
+  },
+  {
+    id: "hr-003",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "A heart rate below 60 beats per minute is known as:",
+    options: ["Tachycardia", "Bradycardia", "Arrhythmia", "Fibrillation"],
+    answer: "Bradycardia",
+    explanation:
+      "Bradycardia refers to a heart rate below 60 beats per minute.",
+    is_visible: true,
+  },
+  {
+    id: "hr-004",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "The normal pacemaker of the heart is the:",
+    options: ["AV node", "Bundle of His", "SA node", "Purkinje fibers"],
+    answer: "SA node",
+    explanation: "The sinoatrial node is the primary pacemaker of the heart.",
+    is_visible: true,
+  },
+  {
+    id: "hr-005",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Why is there a delay at the AV node?",
+    options: [
+      "To allow the ventricles to relax",
+      "To allow the atria to empty before ventricular contraction",
+      "To prevent blood flow to the lungs",
+      "To stop the SA node from firing",
+    ],
+    answer: "To allow the atria to empty before ventricular contraction",
+    explanation:
+      "The AV node delay ensures the atria complete contraction before the ventricles contract.",
+    is_visible: true,
+  },
+  {
+    id: "hr-006",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "If the SA node fails, which structure usually takes over as pacemaker?",
+    options: [
+      "Purkinje fibers",
+      "AV node",
+      "Bundle branches",
+      "Ventricular muscle",
+    ],
+    answer: "AV node",
+    explanation:
+      "The AV node acts as the secondary pacemaker if the SA node fails.",
+    is_visible: true,
+  },
+  {
+    id: "hr-007",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "The AV node normally fires at what intrinsic rate?",
+    options: [
+      "15–20 beats/min",
+      "40–60 beats/min",
+      "60–100 beats/min",
+      "100–120 beats/min",
+    ],
+    answer: "40–60 beats/min",
+    explanation:
+      "The AV node has an intrinsic rate of about 40–60 beats per minute.",
+    is_visible: true,
+  },
+  {
+    id: "hr-008",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "The Purkinje fibers normally fire at what intrinsic rate?",
+    options: [
+      "15–20 beats/min",
+      "30–40 beats/min",
+      "60–100 beats/min",
+      "100–120 beats/min",
+    ],
+    answer: "15–20 beats/min",
+    explanation: "Purkinje fibers have the slowest intrinsic pacemaker rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-009",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which part of the autonomic nervous system increases heart rate?",
+    options: [
+      "Parasympathetic nervous system",
+      "Somatic nervous system",
+      "Sympathetic nervous system",
+      "Enteric nervous system",
+    ],
+    answer: "Sympathetic nervous system",
+    explanation:
+      "Sympathetic stimulation increases heart rate and force of contraction.",
+    is_visible: true,
+  },
+  {
+    id: "hr-010",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which neurotransmitter is released by sympathetic fibers supplying the heart?",
+    options: ["Acetylcholine", "Dopamine", "Norepinephrine", "Serotonin"],
+    answer: "Norepinephrine",
+    explanation:
+      "Sympathetic nerves release norepinephrine, which increases heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-011",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which neurotransmitter is released by the vagus nerve?",
+    options: ["Acetylcholine", "Norepinephrine", "Dopamine", "Histamine"],
+    answer: "Acetylcholine",
+    explanation:
+      "The vagus nerve releases acetylcholine to slow the heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-012",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Acetylcholine slows the heart mainly by acting on which nodes?",
+    options: [
+      "SA and AV nodes",
+      "Purkinje fibers only",
+      "Bundle branches only",
+      "Ventricular muscle only",
+    ],
+    answer: "SA and AV nodes",
+    explanation:
+      "Parasympathetic stimulation mainly affects the SA and AV nodes.",
+    is_visible: true,
+  },
+  {
+    id: "hr-013",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which receptor is mainly responsible for sympathetic effects on the heart?",
+    options: [
+      "Alpha-1 receptor",
+      "Beta-1 receptor",
+      "M2 receptor",
+      "Nicotinic receptor",
+    ],
+    answer: "Beta-1 receptor",
+    explanation:
+      "Beta-1 adrenergic receptors mediate most sympathetic effects on the heart.",
+    is_visible: true,
+  },
+  {
+    id: "hr-014",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which receptor mediates parasympathetic effects on the heart?",
+    options: [
+      "Beta-1 receptor",
+      "Alpha-1 receptor",
+      "M2 muscarinic receptor",
+      "Nicotinic receptor",
+    ],
+    answer: "M2 muscarinic receptor",
+    explanation:
+      "Parasympathetic stimulation acts mainly through M2 muscarinic receptors.",
+    is_visible: true,
+  },
+  {
+    id: "hr-015",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following increases heart rate?",
+    options: [
+      "Increased vagal activity",
+      "Increased sympathetic activity",
+      "Hyperkalemia",
+      "Beta blocker use",
+    ],
+    answer: "Increased sympathetic activity",
+    explanation:
+      "Sympathetic stimulation increases heart rate and cardiac contractility.",
+    is_visible: true,
+  },
+  {
+    id: "hr-016",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Baroreceptors primarily respond to changes in:",
+    options: [
+      "Blood glucose",
+      "Blood pressure",
+      "Body temperature",
+      "Blood calcium",
+    ],
+    answer: "Blood pressure",
+    explanation:
+      "Baroreceptors detect changes in blood pressure and help regulate heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-017",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Chemoreceptors mainly respond to changes in:",
+    options: [
+      "Oxygen, carbon dioxide, and pH",
+      "Blood glucose and insulin",
+      "Blood volume",
+      "Cholesterol levels",
+    ],
+    answer: "Oxygen, carbon dioxide, and pH",
+    explanation:
+      "Chemoreceptors respond to changes in oxygen, carbon dioxide, and hydrogen ion concentration.",
+    is_visible: true,
+  },
+  {
+    id: "hr-018",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following commonly causes resting bradycardia?",
+    options: [
+      "Physical fitness",
+      "Hyperthyroidism",
+      "Fever",
+      "Exercise during activity",
+    ],
+    answer: "Physical fitness",
+    explanation:
+      "Athletes often have resting bradycardia because their hearts pump more efficiently.",
+    is_visible: true,
+  },
+  {
+    id: "hr-019",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which hormone is well known to increase heart rate?",
+    options: [
+      "Insulin",
+      "Thyroid hormone",
+      "Parathyroid hormone",
+      "Aldosterone",
+    ],
+    answer: "Thyroid hormone",
+    explanation:
+      "Thyroid hormone increases heart rate and cardiac contractility.",
+    is_visible: true,
+  },
+  {
+    id: "hr-020",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which drug class commonly reduces heart rate?",
+    options: [
+      "Beta blockers",
+      "Thyroid hormones",
+      "Catecholamines",
+      "Caffeine",
+    ],
+    answer: "Beta blockers",
+    explanation:
+      "Beta blockers reduce sympathetic stimulation of the heart and therefore lower heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-021",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which part of the brain contains the cardiovascular center that regulates heart rate?",
+    options: ["Cerebellum", "Medulla oblongata", "Hypothalamus", "Midbrain"],
+    answer: "Medulla oblongata",
+    explanation:
+      "The cardiovascular center in the medulla oblongata regulates heart rate through autonomic output.",
+    is_visible: true,
+  },
+  {
+    id: "hr-022",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which receptors provide information about movement and exercise to the cardiovascular center?",
+    options: [
+      "Baroreceptors",
+      "Chemoreceptors",
+      "Proprioceptors",
+      "Thermoreceptors",
+    ],
+    answer: "Proprioceptors",
+    explanation:
+      "Proprioceptors send information about body movement and exercise.",
+    is_visible: true,
+  },
+  {
+    id: "hr-023",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "An increase in parasympathetic activity causes:",
+    options: [
+      "An increase in heart rate",
+      "A decrease in heart rate",
+      "An increase in ventricular contractility only",
+      "No change in heart rate",
+    ],
+    answer: "A decrease in heart rate",
+    explanation:
+      "Parasympathetic stimulation slows SA node firing and decreases heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-024",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which ion movement is increased by vagal stimulation of the heart?",
+    options: [
+      "Calcium influx",
+      "Sodium influx",
+      "Potassium efflux",
+      "Chloride influx",
+    ],
+    answer: "Potassium efflux",
+    explanation:
+      "The vagus nerve increases potassium خروج from cardiac pacemaker cells, slowing heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-025",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Sympathetic stimulation increases heart rate mainly by increasing the entry of:",
+    options: [
+      "Potassium and chloride",
+      "Sodium and calcium",
+      "Magnesium and phosphate",
+      "Bicarbonate and chloride",
+    ],
+    answer: "Sodium and calcium",
+    explanation:
+      "Sympathetic stimulation increases sodium and calcium entry into pacemaker cells.",
+    is_visible: true,
+  },
+  {
+    id: "hr-026",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following is most likely to increase heart rate?",
+    options: ["Hypothermia", "Fever", "Sleep", "Beta blocker use"],
+    answer: "Fever",
+    explanation:
+      "An increase in body temperature causes the SA node to discharge more rapidly.",
+    is_visible: true,
+  },
+  {
+    id: "hr-027",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following is most likely to lower heart rate?",
+    options: [
+      "Caffeine",
+      "Exercise",
+      "Calcium channel blockers",
+      "Thyroid hormone",
+    ],
+    answer: "Calcium channel blockers",
+    explanation:
+      "Calcium channel blockers reduce heart rate by slowing conduction through the heart.",
+    is_visible: true,
+  },
+  {
+    id: "hr-028",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which sex generally has a slightly higher resting heart rate?",
+    options: ["Male", "Female", "Both are equal", "It depends only on age"],
+    answer: "Female",
+    explanation:
+      "Females generally have a slightly higher resting heart rate than males.",
+    is_visible: true,
+  },
+  {
+    id: "hr-029",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which condition commonly produces tachycardia?",
+    options: ["Severe physical fitness", "Fever", "Sleep", "High vagal tone"],
+    answer: "Fever",
+    explanation:
+      "Fever commonly increases heart rate and can cause tachycardia.",
+    is_visible: true,
+  },
+  {
+    id: "hr-030",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which of the following may be used to stimulate vagal reflexes and reduce heart rate?",
+    options: [
+      "Carotid sinus massage",
+      "Thyroid hormone administration",
+      "Adrenaline injection",
+      "Caffeine intake",
+    ],
+    answer: "Carotid sinus massage",
+    explanation:
+      "Carotid sinus massage stimulates baroreceptors and increases vagal activity.",
+    is_visible: true,
+  },
+  {
+    id: "hr-031",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Low blood pressure usually causes:",
+    options: [
+      "An increase in vagal activity",
+      "A decrease in sympathetic activity",
+      "An increase in sympathetic activity",
+      "No change in heart rate",
+    ],
+    answer: "An increase in sympathetic activity",
+    explanation:
+      "Low blood pressure activates sympathetic reflexes to increase heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-032",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "High blood pressure usually causes:",
+    options: [
+      "An increase in heart rate",
+      "An increase in sympathetic output",
+      "An increase in vagal activity",
+      "A decrease in baroreceptor firing",
+    ],
+    answer: "An increase in vagal activity",
+    explanation:
+      "High blood pressure stimulates baroreceptors, which increase vagal tone and lower heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-033",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following substances is a catecholamine?",
+    options: ["Insulin", "Adrenaline", "Thyroxine", "Cortisol"],
+    answer: "Adrenaline",
+    explanation:
+      "Adrenaline is a catecholamine that increases heart rate and contractility.",
+    is_visible: true,
+  },
+  {
+    id: "hr-034",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which electrolyte imbalance is well known to alter heart rate and rhythm?",
+    options: [
+      "Potassium imbalance",
+      "Iron imbalance",
+      "Zinc imbalance",
+      "Copper imbalance",
+    ],
+    answer: "Potassium imbalance",
+    explanation:
+      "Changes in potassium levels can strongly affect heart rate and rhythm.",
+    is_visible: true,
+  },
+  {
+    id: "hr-035",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following can depress cardiac activity?",
+    options: ["Hypoxia", "Exercise", "Catecholamines", "Thyroid hormone"],
+    answer: "Hypoxia",
+    explanation:
+      "Hypoxia depresses cardiac activity and may reduce heart performance.",
+    is_visible: true,
+  },
+  {
+    id: "hr-036",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which structure directly conducts impulses from the AV node to the ventricles?",
+    options: ["SA node", "Bundle of His", "Atrial muscle", "Coronary sinus"],
+    answer: "Bundle of His",
+    explanation:
+      "The Bundle of His carries impulses from the AV node into the ventricles.",
+    is_visible: true,
+  },
+  {
+    id: "hr-037",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which conducting fibers spread the impulse rapidly throughout the ventricles?",
+    options: [
+      "Atrial fibers",
+      "Purkinje fibers",
+      "Bundle branches",
+      "Chordae tendineae",
+    ],
+    answer: "Purkinje fibers",
+    explanation:
+      "Purkinje fibers conduct impulses very rapidly to ensure coordinated ventricular contraction.",
+    is_visible: true,
+  },
+  {
+    id: "hr-038",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which factor is most responsible for resting heart rate in healthy adults?",
+    options: [
+      "Sympathetic tone",
+      "Parasympathetic tone",
+      "Calcium intake",
+      "Blood sugar level",
+    ],
+    answer: "Parasympathetic tone",
+    explanation:
+      "Resting heart rate is mainly kept low by vagal parasympathetic tone.",
+    is_visible: true,
+  },
+  {
+    id: "hr-039",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following would most likely increase vagal tone?",
+    options: [
+      "Severe fear",
+      "Exercise",
+      "Carotid sinus massage",
+      "Adrenaline release",
+    ],
+    answer: "Carotid sinus massage",
+    explanation:
+      "Carotid sinus massage stimulates baroreceptors and increases vagal activity.",
+    is_visible: true,
+  },
+  {
+    id: "hr-040",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following usually increases during exercise?",
+    options: [
+      "Parasympathetic discharge",
+      "Heart rate",
+      "AV nodal delay",
+      "Vagal tone",
+    ],
+    answer: "Heart rate",
+    explanation:
+      "Exercise increases sympathetic activity and therefore increases heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "hr-041",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which receptor type is activated by acetylcholine in the heart?",
+    options: [
+      "M1 receptor",
+      "M2 receptor",
+      "Beta-1 receptor",
+      "Alpha-1 receptor",
+    ],
+    answer: "M2 receptor",
+    explanation:
+      "Acetylcholine slows the heart mainly through M2 muscarinic receptors.",
+    is_visible: true,
+  },
+  {
+    id: "hr-042",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which of the following is a likely effect of beta-1 receptor stimulation?",
+    options: [
+      "Reduced heart rate",
+      "Reduced conduction velocity",
+      "Increased heart rate",
+      "Reduced contractility",
+    ],
+    answer: "Increased heart rate",
+    explanation:
+      "Beta-1 receptor stimulation increases heart rate, conduction, and contractility.",
+    is_visible: true,
+  },
+  {
+    id: "hr-043",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which of the following is most likely to occur in an athlete at rest?",
+    options: ["Tachycardia", "Bradycardia", "Heart block", "Fever"],
+    answer: "Bradycardia",
+    explanation:
+      "Athletes often have resting bradycardia due to increased stroke volume and vagal tone.",
+    is_visible: true,
+  },
+  {
+    id: "hr-044",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which of the following is most likely to increase heart rate rapidly during emotional stress?",
+    options: [
+      "Parasympathetic discharge",
+      "Adrenaline release",
+      "Calcium channel blockers",
+      "High vagal tone",
+    ],
+    answer: "Adrenaline release",
+    explanation:
+      "Emotional stress activates sympathetic discharge and adrenaline release.",
+    is_visible: true,
+  },
+  {
+    id: "hr-045",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "Which of the following would most likely produce bradycardia?",
+    options: ["Fever", "Exercise", "Beta blocker use", "Hyperthyroidism"],
+    answer: "Beta blocker use",
+    explanation:
+      "Beta blockers reduce sympathetic stimulation and lower heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "tf-001",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: The SA node is the normal pacemaker of the heart.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation: "The SA node normally initiates the heartbeat.",
+    is_visible: true,
+  },
+  {
+    id: "tf-002",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: Bradycardia means a heart rate above 100 beats per minute.",
+    options: ["True", "False"],
+    answer: "False",
+    explanation: "Bradycardia means a heart rate below 60 beats per minute.",
+    is_visible: true,
+  },
+  {
+    id: "tf-003",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: The AV node delays conduction so the atria can empty before ventricular contraction.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation: "The AV nodal delay allows time for ventricular filling.",
+    is_visible: true,
+  },
+  {
+    id: "tf-004",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "True or False: Sympathetic stimulation decreases heart rate.",
+    options: ["True", "False"],
+    answer: "False",
+    explanation: "Sympathetic stimulation increases heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "tf-005",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: Parasympathetic stimulation mainly affects the SA and AV nodes.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation: "Parasympathetic fibers mainly act on the SA and AV nodes.",
+    is_visible: true,
+  },
+  {
+    id: "tf-006",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: Norepinephrine is the main neurotransmitter released by sympathetic fibers to the heart.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation: "Sympathetic cardiac nerves release norepinephrine.",
+    is_visible: true,
+  },
+  {
+    id: "tf-007",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "True or False: Acetylcholine increases heart rate.",
+    options: ["True", "False"],
+    answer: "False",
+    explanation:
+      "Acetylcholine decreases heart rate by slowing SA node firing.",
+    is_visible: true,
+  },
+  {
+    id: "tf-008",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: Beta-1 receptor stimulation increases heart rate.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Beta-1 receptors increase heart rate and contractility when stimulated.",
+    is_visible: true,
+  },
+  {
+    id: "tf-009",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: M2 muscarinic receptors mediate parasympathetic effects in the heart.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Parasympathetic cardiac effects are mainly mediated by M2 receptors.",
+    is_visible: true,
+  },
+  {
+    id: "tf-010",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "True or False: Fever commonly lowers heart rate.",
+    options: ["True", "False"],
+    answer: "False",
+    explanation: "Fever usually increases heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "tf-011",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "True or False: Athletes commonly have resting tachycardia.",
+    options: ["True", "False"],
+    answer: "False",
+    explanation: "Athletes commonly have resting bradycardia.",
+    is_visible: true,
+  },
+  {
+    id: "tf-012",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: The Purkinje fibers conduct impulses very rapidly.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Purkinje fibers have the fastest conduction velocity in the heart.",
+    is_visible: true,
+  },
+  {
+    id: "tf-013",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: Chemoreceptors respond to changes in oxygen, carbon dioxide, and pH.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Chemoreceptors monitor oxygen, carbon dioxide, and hydrogen ion concentration.",
+    is_visible: true,
+  },
+  {
+    id: "tf-014",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: Baroreceptors respond mainly to changes in blood pressure.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Baroreceptors detect stretch caused by blood pressure changes.",
+    is_visible: true,
+  },
+  {
+    id: "tf-015",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: Low blood pressure usually increases sympathetic activity.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Low blood pressure triggers sympathetic reflexes to raise heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "tf-016",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: High blood pressure usually increases vagal activity.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "High blood pressure stimulates baroreceptors and increases vagal tone.",
+    is_visible: true,
+  },
+  {
+    id: "tf-017",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "True or False: Thyroid hormone can increase heart rate.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Thyroid hormone increases heart rate and cardiac contractility.",
+    is_visible: true,
+  },
+  {
+    id: "tf-018",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "True or False: Potassium imbalance can affect heart rhythm.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Abnormal potassium levels can alter cardiac rhythm and heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "tf-019",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: The AV node normally fires faster than the SA node.",
+    options: ["True", "False"],
+    answer: "False",
+    explanation: "The SA node has the fastest intrinsic firing rate.",
+    is_visible: true,
+  },
+  {
+    id: "tf-020",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "True or False: The Bundle of His lies between the AV node and Purkinje fibers.",
+    options: ["True", "False"],
+    answer: "True",
+    explanation:
+      "Impulses travel from the AV node to the Bundle of His before reaching Purkinje fibers.",
+    is_visible: true,
+  },
+  {
+    id: "bonus-001",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "A patient with severe fear suddenly develops a heart rate of 120 beats/min. Which mechanism is most responsible?",
+    options: [
+      "Increased vagal discharge",
+      "Increased sympathetic discharge",
+      "Reduced catecholamine release",
+      "Reduced beta-1 receptor stimulation",
+    ],
+    answer: "Increased sympathetic discharge",
+    explanation:
+      "Fear activates the sympathetic nervous system and increases heart rate.",
+    is_visible: true,
+  },
+  {
+    id: "bonus-002",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "A healthy athlete has a resting heart rate of 48 beats/min. This is most likely due to:",
+    options: [
+      "Heart failure",
+      "Increased vagal tone",
+      "AV node damage",
+      "Hyperthyroidism",
+    ],
+    answer: "Increased vagal tone",
+    explanation:
+      "Athletes commonly have increased vagal tone and resting bradycardia.",
+    is_visible: true,
+  },
+  {
+    id: "bonus-003",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "A patient with hyperthyroidism is most likely to develop:",
+    options: [
+      "Bradycardia",
+      "Tachycardia",
+      "Heart block",
+      "Reduced cardiac output",
+    ],
+    answer: "Tachycardia",
+    explanation: "Thyroid hormone increases heart rate and cardiac output.",
+    is_visible: true,
+  },
+  {
+    id: "bonus-004",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which maneuver may terminate some types of supraventricular tachycardia by increasing vagal tone?",
+    options: [
+      "Deep inspiration",
+      "Carotid sinus massage",
+      "Adrenaline injection",
+      "Exercise",
+    ],
+    answer: "Carotid sinus massage",
+    explanation:
+      "Carotid sinus massage increases vagal tone and can slow conduction through the AV node.",
+    is_visible: true,
+  },
+  {
+    id: "bonus-005",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "A patient with severe blood loss is likely to develop tachycardia because:",
+    options: [
+      "Blood pressure falls and sympathetic activity increases",
+      "Blood pressure rises and vagal tone increases",
+      "Calcium channel blockers are activated",
+      "The SA node stops firing",
+    ],
+    answer: "Blood pressure falls and sympathetic activity increases",
+    explanation:
+      "Blood loss lowers blood pressure, activating sympathetic reflexes and causing tachycardia.",
+    is_visible: true,
+  },
+  {
+    id: "bonus-006",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question: "A drug that blocks beta-1 receptors would most likely cause:",
+    options: [
+      "An increase in heart rate",
+      "A decrease in heart rate",
+      "An increase in vagal discharge",
+      "An increase in thyroid hormone release",
+    ],
+    answer: "A decrease in heart rate",
+    explanation:
+      "Blocking beta-1 receptors reduces sympathetic effects on the heart.",
+    is_visible: true,
+  },
+  {
+    id: "bonus-007",
+    subject: "physiology-101",
+    topic: "cardiovascular-system-001",
+    question:
+      "Which structure has the fastest intrinsic rate of depolarization?",
+    options: ["Purkinje fibers", "AV node", "SA node", "Bundle branches"],
     answer: "SA node",
     explanation:
-      "The sinoatrial (SA) node is the normal pacemaker because it has the highest intrinsic rate of spontaneous depolarization.",
+      "The SA node has the highest intrinsic firing rate and therefore acts as the primary pacemaker.",
     is_visible: true,
   },
   {
-    id: "002",
+    id: "bonus-008",
     subject: "physiology-101",
     topic: "cardiovascular-system-001",
     question:
-      "True or False: The AV node conducts impulses faster than Purkinje fibers.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation:
-      "Purkinje fibers conduct impulses much faster than the AV node.",
-    is_visible: true,
-  },
-  {
-    id: "003",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "What is the normal resting heart rate range in adults?",
-    options: ["20-40 bpm", "40-60 bpm", "60-100 bpm", "100-140 bpm"],
-    answer: "60-100 bpm",
-    explanation:
-      "The normal resting heart rate for adults is between 60 and 100 beats per minute.",
-    is_visible: true,
-  },
-  {
-    id: "004",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: The fibrous AV ring allows free spread of impulses from atria to ventricles.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation:
-      "The fibrous AV ring acts as an electrical insulator between atria and ventricles.",
-    is_visible: true,
-  },
-  {
-    id: "005",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which part of the cardiac conduction system delays the electrical impulse?",
-    options: ["SA node", "AV node", "Bundle branches", "Purkinje fibers"],
-    answer: "AV node",
-    explanation: "The AV node delays the impulse to allow ventricular filling.",
-    is_visible: true,
-  },
-  {
-    id: "006",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Purkinje fibers have the fastest conduction velocity in the heart.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Purkinje fibers conduct impulses very rapidly to ensure simultaneous ventricular contraction.",
-    is_visible: true,
-  },
-  {
-    id: "007",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "What is the approximate resting membrane potential of ventricular muscle cells?",
-    options: ["-30 mV", "-60 mV", "-90 mV", "+20 mV"],
-    answer: "-90 mV",
-    explanation:
-      "Ventricular muscle cells have a stable resting membrane potential of about -90 mV.",
-    is_visible: true,
-  },
-  {
-    id: "008",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Phase 2 of the ventricular action potential is known as the plateau phase.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Phase 2 is the plateau phase caused by calcium influx balancing potassium efflux.",
-    is_visible: true,
-  },
-  {
-    id: "009",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which ion is mainly responsible for phase 0 depolarization in ventricular muscle cells?",
-    options: ["Calcium", "Potassium", "Sodium", "Chloride"],
-    answer: "Sodium",
-    explanation:
-      "Rapid sodium influx is responsible for phase 0 depolarization in ventricular muscle.",
-    is_visible: true,
-  },
-  {
-    id: "010",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Cardiac muscle can undergo tetany like skeletal muscle.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation:
-      "The long refractory period prevents tetany in cardiac muscle.",
-    is_visible: true,
-  },
-  {
-    id: "031",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which hormone increases heart rate and contractility?",
-    options: ["Insulin", "Thyroxine", "Parathyroid hormone", "Glucagon"],
-    answer: "Thyroxine",
-    explanation:
-      "Thyroid hormones increase heart rate and cardiac contractility.",
-    is_visible: true,
-  },
-  {
-    id: "032",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: Catecholamines increase heart rate.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Catecholamines such as epinephrine and norepinephrine increase heart rate.",
-    is_visible: true,
-  },
-  {
-    id: "033",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "What is the formula for cardiac output?",
-    options: ["CO = BP × HR", "CO = HR × SV", "CO = SV ÷ HR", "CO = MAP × SV"],
-    answer: "CO = HR × SV",
-    explanation:
-      "Cardiac output is calculated by multiplying heart rate by stroke volume.",
-    is_visible: true,
-  },
-  {
-    id: "034",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: A normal cardiac output in adults is approximately 5 L/min.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation: "Normal resting cardiac output is around 5 liters per minute.",
-    is_visible: true,
-  },
-  {
-    id: "035",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "What is stroke volume?",
+      "A patient develops marked bradycardia after excessive vagal stimulation. Which ion movement is most likely increased?",
     options: [
-      "Volume of blood pumped by one ventricle per beat",
-      "Volume of blood in the atria",
-      "Volume of blood returning to the heart",
-      "Volume of blood in arteries",
+      "Sodium influx",
+      "Calcium influx",
+      "Potassium efflux",
+      "Chloride influx",
     ],
-    answer: "Volume of blood pumped by one ventricle per beat",
+    answer: "Potassium efflux",
     explanation:
-      "Stroke volume is the amount of blood ejected by one ventricle during each beat.",
-    is_visible: true,
-  },
-  {
-    id: "036",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Increasing venous return increases cardiac output.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Greater venous return increases end-diastolic volume and stroke volume.",
-    is_visible: true,
-  },
-  {
-    id: "037",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which law explains that increased filling of the heart leads to stronger contraction?",
-    options: ["Laplace law", "Starling law", "Boyle law", "Poiseuille law"],
-    answer: "Starling law",
-    explanation:
-      "The Frank-Starling law states that increased preload increases force of contraction.",
-    is_visible: true,
-  },
-  {
-    id: "038",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: The Frank-Starling mechanism depends on increased end-diastolic volume.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Increased end-diastolic volume stretches the myocardium and increases contraction.",
-    is_visible: true,
-  },
-  {
-    id: "039",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which of the following increases cardiac output?",
-    options: [
-      "Decreased heart rate",
-      "Increased stroke volume",
-      "Increased vagal activity",
-      "Hypothyroidism",
-    ],
-    answer: "Increased stroke volume",
-    explanation: "Cardiac output rises when stroke volume increases.",
-    is_visible: true,
-  },
-  {
-    id: "040",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Parasympathetic stimulation strongly increases ventricular contractility.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation:
-      "Parasympathetic supply has little effect on ventricular myocardium.",
-    is_visible: true,
-  },
-  {
-    id: "041",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "What is systolic blood pressure?",
-    options: [
-      "Pressure during ventricular relaxation",
-      "Pressure during ventricular contraction",
-      "Pressure in veins",
-      "Pressure in capillaries",
-    ],
-    answer: "Pressure during ventricular contraction",
-    explanation:
-      "Systolic pressure is the highest arterial pressure during ventricular systole.",
-    is_visible: true,
-  },
-  {
-    id: "042",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Diastolic blood pressure is the pressure during ventricular relaxation.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation: "Diastolic pressure occurs during ventricular relaxation.",
-    is_visible: true,
-  },
-  {
-    id: "043",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "What is pulse pressure?",
-    options: [
-      "Systolic pressure + diastolic pressure",
-      "Systolic pressure - diastolic pressure",
-      "Mean arterial pressure",
-      "Diastolic pressure ÷ systolic pressure",
-    ],
-    answer: "Systolic pressure - diastolic pressure",
-    explanation:
-      "Pulse pressure is the difference between systolic and diastolic pressures.",
-    is_visible: true,
-  },
-  {
-    id: "044",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Mean arterial pressure is closer to diastolic pressure than systolic pressure.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "MAP is closer to diastolic pressure because the heart spends more time in diastole.",
-    is_visible: true,
-  },
-  {
-    id: "045",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which receptor detects changes in blood pressure?",
-    options: [
-      "Chemoreceptors",
-      "Baroreceptors",
-      "Proprioceptors",
-      "Pain receptors",
-    ],
-    answer: "Baroreceptors",
-    explanation:
-      "Baroreceptors detect stretch changes caused by blood pressure changes.",
-    is_visible: true,
-  },
-  {
-    id: "046",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Baroreceptors are found in the carotid sinus and aortic arch.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "The major arterial baroreceptors are located in the carotid sinus and aortic arch.",
-    is_visible: true,
-  },
-  {
-    id: "047",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "What happens when blood pressure rises suddenly?",
-    options: [
-      "Heart rate increases",
-      "Baroreceptor firing decreases",
-      "Parasympathetic activity increases",
-      "Sympathetic activity increases",
-    ],
-    answer: "Parasympathetic activity increases",
-    explanation:
-      "Increased blood pressure stimulates baroreceptors and increases vagal activity.",
-    is_visible: true,
-  },
-  {
-    id: "048",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Sympathetic stimulation causes vasoconstriction in most blood vessels.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Sympathetic stimulation usually causes vasoconstriction through alpha receptors.",
-    is_visible: true,
-  },
-  {
-    id: "049",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which of the following decreases blood pressure?",
-    options: [
-      "Increased cardiac output",
-      "Increased peripheral resistance",
-      "Decreased blood volume",
-      "Increased sympathetic activity",
-    ],
-    answer: "Decreased blood volume",
-    explanation:
-      "A fall in blood volume reduces venous return and blood pressure.",
-    is_visible: true,
-  },
-  {
-    id: "050",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Arterioles are the major resistance vessels of the circulation.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation: "Arterioles provide most of the resistance to blood flow.",
-    is_visible: true,
-  },
-  {
-    id: "051",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which vessels are primarily responsible for exchange of gases and nutrients?",
-    options: ["Arteries", "Veins", "Capillaries", "Arterioles"],
-    answer: "Capillaries",
-    explanation:
-      "Capillaries are thin-walled vessels specialized for exchange of gases, nutrients, and wastes.",
-    is_visible: true,
-  },
-  {
-    id: "052",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Capillary hydrostatic pressure promotes filtration of fluid out of capillaries.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Capillary hydrostatic pressure pushes fluid out of capillaries into the interstitial space.",
-    is_visible: true,
-  },
-  {
-    id: "053",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which pressure pulls fluid back into capillaries?",
-    options: [
-      "Capillary hydrostatic pressure",
-      "Interstitial hydrostatic pressure",
-      "Plasma oncotic pressure",
-      "Arterial pressure",
-    ],
-    answer: "Plasma oncotic pressure",
-    explanation:
-      "Plasma proteins create oncotic pressure which pulls fluid into capillaries.",
-    is_visible: true,
-  },
-  {
-    id: "054",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Edema can result from increased capillary hydrostatic pressure.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Higher capillary hydrostatic pressure causes more fluid to leave capillaries and may lead to edema.",
-    is_visible: true,
-  },
-  {
-    id: "055",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which structure returns excess tissue fluid back to the bloodstream?",
-    options: ["Arteries", "Capillaries", "Lymphatics", "Venules"],
-    answer: "Lymphatics",
-    explanation:
-      "The lymphatic system returns excess interstitial fluid to the circulation.",
-    is_visible: true,
-  },
-  {
-    id: "056",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Decreased plasma protein concentration can lead to edema.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Reduced plasma proteins decrease oncotic pressure and favor fluid accumulation in tissues.",
-    is_visible: true,
-  },
-  {
-    id: "057",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which special circulation has the highest blood flow per gram of tissue?",
-    options: [
-      "Pulmonary circulation",
-      "Coronary circulation",
-      "Renal circulation",
-      "Skin circulation",
-    ],
-    answer: "Renal circulation",
-    explanation:
-      "The kidneys receive a very high blood flow relative to their size.",
-    is_visible: true,
-  },
-  {
-    id: "058",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Coronary blood flow is greatest during ventricular diastole.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Coronary vessels are compressed during systole, so most coronary blood flow occurs during diastole.",
-    is_visible: true,
-  },
-  {
-    id: "059",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which circulation is characterized by low pressure and low resistance?",
-    options: [
-      "Systemic circulation",
-      "Coronary circulation",
-      "Pulmonary circulation",
-      "Renal circulation",
-    ],
-    answer: "Pulmonary circulation",
-    explanation:
-      "Pulmonary circulation operates at much lower pressure than systemic circulation.",
-    is_visible: true,
-  },
-  {
-    id: "060",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Cerebral blood flow remains relatively constant despite moderate changes in blood pressure.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Cerebral autoregulation helps maintain fairly constant blood flow to the brain.",
-    is_visible: true,
-  },
-  {
-    id: "061",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which factor is the strongest local regulator of cerebral blood flow?",
-    options: ["Oxygen", "Carbon dioxide", "Calcium", "Glucose"],
-    answer: "Carbon dioxide",
-    explanation: "Carbon dioxide is a major regulator of cerebral blood flow.",
-    is_visible: true,
-  },
-  {
-    id: "062",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: Skin blood flow increases in hot weather.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation: "Skin blood flow increases to promote heat loss.",
-    is_visible: true,
-  },
-  {
-    id: "063",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which blood vessel normally carries oxygenated blood from the lungs to the heart?",
-    options: [
-      "Pulmonary artery",
-      "Aorta",
-      "Pulmonary vein",
-      "Superior vena cava",
-    ],
-    answer: "Pulmonary vein",
-    explanation:
-      "Pulmonary veins carry oxygenated blood from the lungs to the left atrium.",
-    is_visible: true,
-  },
-  {
-    id: "064",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: The pulmonary artery carries deoxygenated blood.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "The pulmonary artery carries deoxygenated blood from the right ventricle to the lungs.",
-    is_visible: true,
-  },
-  {
-    id: "065",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which valve closes to produce the first heart sound?",
-    options: [
-      "Aortic valve",
-      "Pulmonary valve",
-      "Mitral valve",
-      "Aortic and pulmonary valves",
-    ],
-    answer: "Mitral valve",
-    explanation:
-      "The first heart sound occurs due to closure of the AV valves, including the mitral valve.",
-    is_visible: true,
-  },
-  {
-    id: "066",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: The second heart sound is produced by closure of the semilunar valves.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Closure of the aortic and pulmonary valves produces the second heart sound.",
-    is_visible: true,
-  },
-  {
-    id: "067",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which phase of the cardiac cycle immediately follows atrial systole?",
-    options: [
-      "Rapid ejection",
-      "Reduced filling",
-      "Isovolumetric ventricular contraction",
-      "Rapid filling",
-    ],
-    answer: "Isovolumetric ventricular contraction",
-    explanation:
-      "Atrial systole is followed by isovolumetric ventricular contraction.",
-    is_visible: true,
-  },
-  {
-    id: "068",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: During isovolumetric contraction, all heart valves are closed.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "During isovolumetric contraction, both AV and semilunar valves are closed.",
-    is_visible: true,
-  },
-  {
-    id: "069",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which phase of ventricular diastole involves rapid entry of blood into the ventricles?",
-    options: [
-      "Protodiastole",
-      "Rapid filling",
-      "Isovolumetric relaxation",
-      "Reduced ejection",
-    ],
-    answer: "Rapid filling",
-    explanation:
-      "Rapid filling occurs when AV valves open and blood enters the ventricles quickly.",
-    is_visible: true,
-  },
-  {
-    id: "070",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Ventricular systole lasts longer than ventricular diastole at rest.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation:
-      "At rest, ventricular diastole lasts longer than ventricular systole.",
-    is_visible: true,
-  },
-  {
-    id: "071",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "What is the approximate duration of one normal cardiac cycle at 75 beats per minute?",
-    options: ["0.2 seconds", "0.5 seconds", "0.8 seconds", "1.5 seconds"],
-    answer: "0.8 seconds",
-    explanation:
-      "One normal cardiac cycle lasts about 0.8 seconds at a heart rate around 75 bpm.",
-    is_visible: true,
-  },
-  {
-    id: "072",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Atrial systole contributes the final portion of ventricular filling.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Atrial contraction provides the last portion of blood entering the ventricles.",
-    is_visible: true,
-  },
-  {
-    id: "073",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which chamber has the thickest wall?",
-    options: [
-      "Right atrium",
-      "Left atrium",
-      "Right ventricle",
-      "Left ventricle",
-    ],
-    answer: "Left ventricle",
-    explanation:
-      "The left ventricle has the thickest wall because it pumps blood to the systemic circulation.",
-    is_visible: true,
-  },
-  {
-    id: "074",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: The right ventricle pumps blood into the systemic circulation.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation:
-      "The right ventricle pumps blood into the pulmonary circulation.",
-    is_visible: true,
-  },
-  {
-    id: "075",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which blood vessel leaves the left ventricle?",
-    options: [
-      "Pulmonary artery",
-      "Aorta",
-      "Superior vena cava",
-      "Pulmonary vein",
-    ],
-    answer: "Aorta",
-    explanation:
-      "The aorta carries blood from the left ventricle to the systemic circulation.",
-    is_visible: true,
-  },
-  {
-    id: "076",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: The superior vena cava drains blood into the left atrium.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation: "The superior vena cava drains blood into the right atrium.",
-    is_visible: true,
-  },
-  {
-    id: "077",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which valve lies between the left atrium and left ventricle?",
-    options: [
-      "Tricuspid valve",
-      "Pulmonary valve",
-      "Mitral valve",
-      "Aortic valve",
-    ],
-    answer: "Mitral valve",
-    explanation:
-      "The mitral valve separates the left atrium from the left ventricle.",
-    is_visible: true,
-  },
-  {
-    id: "078",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: The tricuspid valve lies between the right atrium and right ventricle.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "The tricuspid valve separates the right atrium from the right ventricle.",
-    is_visible: true,
-  },
-  {
-    id: "079",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which vessel returns oxygenated blood from the lungs to the heart?",
-    options: [
-      "Pulmonary artery",
-      "Pulmonary vein",
-      "Aorta",
-      "Inferior vena cava",
-    ],
-    answer: "Pulmonary vein",
-    explanation: "Pulmonary veins carry oxygenated blood to the left atrium.",
-    is_visible: true,
-  },
-  {
-    id: "080",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: The aortic valve is located between the left ventricle and aorta.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "The aortic valve controls blood flow from the left ventricle into the aorta.",
-    is_visible: true,
-  },
-  {
-    id: "081",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which blood vessel carries deoxygenated blood from the body to the right atrium?",
-    options: [
-      "Aorta",
-      "Pulmonary vein",
-      "Superior vena cava",
-      "Pulmonary artery",
-    ],
-    answer: "Superior vena cava",
-    explanation:
-      "The superior vena cava carries deoxygenated blood from the upper body to the right atrium.",
-    is_visible: true,
-  },
-  {
-    id: "082",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: The pulmonary valve is located between the right ventricle and pulmonary artery.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "The pulmonary valve opens from the right ventricle into the pulmonary artery.",
-    is_visible: true,
-  },
-  {
-    id: "083",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which phase of ventricular systole involves blood being ejected from the ventricles?",
-    options: [
-      "Isovolumetric contraction",
-      "Rapid ejection",
-      "Rapid filling",
-      "Protodiastole",
-    ],
-    answer: "Rapid ejection",
-    explanation:
-      "Rapid ejection occurs when blood is forcefully pumped out of the ventricles.",
-    is_visible: true,
-  },
-  {
-    id: "084",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: During rapid filling, the AV valves are open.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "During rapid filling, the AV valves are open, allowing blood into the ventricles.",
-    is_visible: true,
-  },
-  {
-    id: "085",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which phase of the cardiac cycle is also called diastasis?",
-    options: [
-      "Rapid filling",
-      "Reduced ventricular filling",
-      "Protodiastole",
-      "Rapid ejection",
-    ],
-    answer: "Reduced ventricular filling",
-    explanation: "Reduced ventricular filling is also called diastasis.",
-    is_visible: true,
-  },
-  {
-    id: "086",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: S1 is louder than S2 at the base of the heart.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation:
-      "S2 is louder at the base of the heart, while S1 is louder at the apex.",
-    is_visible: true,
-  },
-  {
-    id: "087",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which heart sound is associated with closure of the mitral and tricuspid valves?",
-    options: ["S1", "S2", "S3", "S4"],
-    answer: "S1",
-    explanation: "S1 is produced by closure of the AV valves.",
-    is_visible: true,
-  },
-  {
-    id: "088",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: S3 is always pathological in children.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation: "S3 can be normal in children and young adults.",
-    is_visible: true,
-  },
-  {
-    id: "089",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which heart sound may be heard in ventricular hypertrophy?",
-    options: ["S1", "S2", "S3", "S4"],
-    answer: "S4",
-    explanation:
-      "S4 may occur when the atria contract against a stiff ventricle.",
-    is_visible: true,
-  },
-  {
-    id: "090",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: S4 occurs during atrial contraction.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation: "S4 occurs when the atria contract against a stiff ventricle.",
-    is_visible: true,
-  },
-  {
-    id: "091",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which part of the circulation has the lowest blood pressure?",
-    options: ["Aorta", "Arterioles", "Capillaries", "Vena cava"],
-    answer: "Vena cava",
-    explanation:
-      "Blood pressure is lowest in the vena cava near the right atrium.",
-    is_visible: true,
-  },
-  {
-    id: "092",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: Veins act as capacitance vessels.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "Veins store large amounts of blood and are called capacitance vessels.",
-    is_visible: true,
-  },
-  {
-    id: "093",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "Which blood vessel has the highest pressure?",
-    options: ["Aorta", "Capillary", "Vein", "Pulmonary artery"],
-    answer: "Aorta",
-    explanation: "The aorta has the highest pressure in the circulation.",
-    is_visible: true,
-  },
-  {
-    id: "094",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: Resistance to blood flow is inversely related to the fourth power of vessel radius.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "According to Poiseuille's law, resistance is inversely proportional to radius to the fourth power.",
-    is_visible: true,
-  },
-  {
-    id: "095",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which factor causes vasodilation in skeletal muscle during exercise?",
-    options: [
-      "Decreased carbon dioxide",
-      "Increased oxygen",
-      "Increased adenosine",
-      "Decreased temperature",
-    ],
-    answer: "Increased adenosine",
-    explanation:
-      "Adenosine is a local vasodilator released during increased metabolic activity.",
-    is_visible: true,
-  },
-  {
-    id: "096",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: Nitric oxide causes vasoconstriction.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation: "Nitric oxide is a potent vasodilator.",
-    is_visible: true,
-  },
-  {
-    id: "097",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which substance is released by endothelial cells and causes vasodilation?",
-    options: ["Histamine", "Bradykinin", "Nitric oxide", "Angiotensin II"],
-    answer: "Nitric oxide",
-    explanation:
-      "Nitric oxide is released by endothelial cells and relaxes vascular smooth muscle.",
-    is_visible: true,
-  },
-  {
-    id: "098",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question: "True or False: Angiotensin II is a powerful vasodilator.",
-    options: ["true", "false"],
-    answer: "false",
-    explanation: "Angiotensin II is a powerful vasoconstrictor.",
-    is_visible: true,
-  },
-  {
-    id: "099",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "Which hormone promotes sodium and water retention and increases blood pressure?",
-    options: ["Insulin", "Aldosterone", "Thyroxine", "Glucagon"],
-    answer: "Aldosterone",
-    explanation:
-      "Aldosterone increases sodium and water retention, increasing blood volume and pressure.",
-    is_visible: true,
-  },
-  {
-    id: "100",
-    subject: "physiology-101",
-    topic: "cardiovascular-system-001",
-    question:
-      "True or False: ADH can help increase blood pressure by increasing water reabsorption.",
-    options: ["true", "false"],
-    answer: "true",
-    explanation:
-      "ADH increases water reabsorption and can increase blood pressure.",
+      "Vagal stimulation increases potassium movement out of pacemaker cells, slowing heart rate.",
     is_visible: true,
   },
 ];
