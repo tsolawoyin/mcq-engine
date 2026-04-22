@@ -63,7 +63,7 @@ export default function Config() {
   const firstSubject = subjects[0];
   const [selections, setSelections] = useImmer<Exam[]>([
     {
-      id: v4(),
+      id: "selection-0",
       subject: firstSubject,
       topic: topics.filter((topic) => topic.subject == firstSubject.id)[0],
       noq: "",
