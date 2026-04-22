@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { ExamQuestion } from "@/components/config";
 import { useParams } from "next/navigation";
 import ExamProvider, { useExamContext } from "@/app/exam/[id]/exam-provider";
+import { useApp } from "@/app/app-provider";
+import { recordAttempt } from "@/lib/record-attempt";
 import { Button } from "@/components/ui/button";
 import {
   AlertDialog,
@@ -93,6 +95,7 @@ function RenderQuestion() {
     submitted,
     submit,
   } = useExamContext();
+  const { db } = useApp();
   const examEnded = timeLeft === "00:00:00" || submitted;
   const questions = currentExam.questions;
   const [currentIndex, setCurrentIndex] = useState(currentExam.currentQuestion);
@@ -108,8 +111,11 @@ function RenderQuestion() {
     const question = questionMap.get(examQ.question);
     if (!question) return;
 
-    if (examQ.userAnswer === question.answer) markUp();
+    const isCorrect = examQ.userAnswer === question.answer;
+    if (isCorrect) markUp();
     else markDown();
+
+    void recordAttempt(db, question, isCorrect);
 
     setCurrentExam((draft) => {
       // exactly. this will help persist state....

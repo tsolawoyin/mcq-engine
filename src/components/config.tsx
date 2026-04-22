@@ -23,6 +23,7 @@ import { Topic } from "@/data/topics";
 import { Question, questions } from "@/data/questions";
 import Link from "next/link";
 import { ModeToggle } from "./toggler";
+import { MasteryBadge } from "./mastery-badge";
 import { useImmer, Updater } from "use-immer";
 
 export interface Exam {
@@ -307,7 +308,10 @@ function SelectionInt({
               .map((topic) => {
                 return (
                   <SelectItem key={topic.id} value={topic.id}>
-                    {topic.name}
+                    <span className="flex items-center gap-2">
+                      {topic.name}
+                      <MasteryBadge topicId={topic.id} />
+                    </span>
                   </SelectItem>
                 );
               })}
