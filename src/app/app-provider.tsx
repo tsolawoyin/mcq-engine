@@ -3,6 +3,7 @@
 import { subjects as defaultSubjects } from "@/data/subjects";
 import { topics as defaultTopics } from "@/data/topics";
 import { questions as defaultQuestions } from "@/data/questions";
+import { DATA_VERSION } from "@/data/version";
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { Subject } from "@/data/subjects";
@@ -28,38 +29,31 @@ export default function AppProvider({
   const [topics, setTopics] = useState<Topic[]>([]);
   const [questions, setQuestions] = useState<Question[]>([]);
 
-  console.log(subjects);
-  console.log(topics);
-  console.log(questions[0]);
-
   useEffect(() => {
     async function loadData() {
-      // Check what's already in the db
-      const [dbSubjects, dbTopics, dbQuestions] = await Promise.all([
-        db.subjects.toArray(),
-        db.topics.toArray(),
-        db.questions.toArray(),
-      ]);
+      const storedVersion = await db.meta.get("dataVersion");
+      const needsReseed = storedVersion?.value !== DATA_VERSION;
 
-      // Seed tables that are empty with the hardcoded defaults
-      if (dbSubjects.length === 0) {
-        await db.subjects.bulkPut(defaultSubjects);
+      if (needsReseed) {
+        // Source data changed — re-seed content tables
+        await Promise.all([
+          db.subjects.bulkPut(defaultSubjects),
+          db.topics.bulkPut(defaultTopics),
+          db.questions.bulkPut(defaultQuestions),
+        ]);
+        await db.meta.put({ key: "dataVersion", value: DATA_VERSION });
+
         setSubjects(defaultSubjects);
-      } else {
-        setSubjects(dbSubjects);
-      }
-
-      if (dbTopics.length === 0) {
-        await db.topics.bulkPut(defaultTopics);
         setTopics(defaultTopics);
-      } else {
-        setTopics(dbTopics);
-      }
-
-      if (dbQuestions.length === 0) {
-        await db.questions.bulkPut(defaultQuestions);
         setQuestions(defaultQuestions);
       } else {
+        const [dbSubjects, dbTopics, dbQuestions] = await Promise.all([
+          db.subjects.orderBy("order").toArray(),
+          db.topics.orderBy("order").toArray(),
+          db.questions.toArray(),
+        ]);
+        setSubjects(dbSubjects);
+        setTopics(dbTopics);
         setQuestions(dbQuestions);
       }
     }
