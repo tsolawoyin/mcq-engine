@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ExamQuestion } from "@/components/config";
 import { useParams } from "next/navigation";
@@ -84,6 +84,65 @@ function ExamContent() {
   );
 }
 
+function ResultsDialog({
+  open,
+  onClose,
+  exams,
+}: {
+  open: boolean;
+  onClose: () => void;
+  exams: { topic: { name: string }; score: number; noq: string }[];
+}) {
+  const totalScore = exams.reduce((sum, e) => sum + e.score, 0);
+  const totalQuestions = exams.reduce((sum, e) => sum + Number(e.noq), 0);
+  const avgPercent =
+    totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
+
+  return (
+    <AlertDialog open={open} onOpenChange={(v) => !v && onClose()}>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Exam Finished</AlertDialogTitle>
+          <AlertDialogDescription asChild>
+            <div className="grid gap-3 pt-2">
+              {exams.map((exam, i) => {
+                const pct =
+                  Number(exam.noq) > 0
+                    ? Math.round((exam.score / Number(exam.noq)) * 100)
+                    : 0;
+                return (
+                  <div
+                    key={i}
+                    className="flex min-w-0 items-center justify-between gap-2 text-sm"
+                  >
+                    <span className="truncate">{exam.topic.name}</span>
+                    <span className="shrink-0 font-medium">{pct}%</span>
+                  </div>
+                );
+              })}
+              {exams.length > 1 && (
+                <>
+                  <div className="border-t" />
+                  <div className="flex items-center justify-between font-medium">
+                    <span>Average</span>
+                    <span>{avgPercent}</span>
+                  </div>
+                </>
+              )}
+              <div className="mt-2 text-center text-3xl font-bold">
+                {avgPercent}%
+              </div>
+            </div>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogAction onClick={onClose}>Close</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
+}
+
 function RenderQuestion() {
   const {
     currentExam,
@@ -94,11 +153,13 @@ function RenderQuestion() {
     timeLeft,
     submitted,
     submit,
+    exams,
   } = useExamContext();
   const { db } = useApp();
   const examEnded = timeLeft === "00:00:00" || submitted;
   const questions = currentExam.questions;
   const [currentIndex, setCurrentIndex] = useState(currentExam.currentQuestion);
+  const [showResults, setShowResults] = useState(false);
 
   const examQ = questions[currentIndex];
 
@@ -145,8 +206,15 @@ function RenderQuestion() {
     });
   }, [currentIndex, setCurrentExam]);
 
+  const wasEnded = useRef(examEnded);
+  useEffect(() => {
+    if (examEnded && !wasEnded.current) setShowResults(true);
+    wasEnded.current = examEnded;
+  }, [examEnded]);
+
   return (
     <div className="grid h-full grid-rows-[1fr_auto] gap-4">
+      <ResultsDialog open={showResults} onClose={() => setShowResults(false)} exams={exams} />
       <div className="mt-7 overflow-y-auto">
         <AnimatePresence mode="wait">
           <motion.div
@@ -205,6 +273,9 @@ function RenderQuestion() {
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
+        )}
+        {examEnded && (
+          <Button onClick={() => setShowResults(true)}>View Results</Button>
         )}
         <QuestionNav
           questions={questions}
@@ -345,5 +416,5 @@ function QuestionNav({
   );
 }
 
-// I think one of the things I can do to take this app a step further is storing the questions online. 
+// I think one of the things I can do to take this app a step further is storing the questions online.
 // But before that, let me first store the questions on user device if they don't have it already....
