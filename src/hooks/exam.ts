@@ -27,6 +27,14 @@ export default function useExam(examId: string) {
       try {
         const session = await db.exam_sessions.get(examId);
         if (session) {
+          // Runtime migration: convert legacy topic → topics
+          for (const exam of session.exams) {
+            const e = exam as any;
+            if (e.topic && !e.topics) {
+              e.topics = [e.topic];
+              delete e.topic;
+            }
+          }
           setExamSession(session);
           // use currentExam id to find the right exam, fallback to exams[0] for old sessions
           const active = session.currentExam

@@ -10,9 +10,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { InfoIcon, Loader2Icon, Plus, X } from "lucide-react";
+import { ChevronDown, InfoIcon, Loader2Icon, Plus, X } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 import { useApp } from "@/app/app-provider";
@@ -29,7 +35,7 @@ import { useImmer, Updater } from "use-immer";
 export interface Exam {
   id: string;
   subject: Subject;
-  topic: Topic;
+  topics: Topic[];
   noq: string; //but meant to be number but having issue with 0 in input element
   questions: ExamQuestion[];
   currentQuestion: number;
@@ -64,7 +70,6 @@ export default function Config() {
   const [selections, setSelections] = useImmer<Exam[]>([]);
   const [initialized, setInitialized] = useState(false);
 
-  console.log(selections);
   // Initialize selections once data is loaded from db
   useEffect(() => {
     if (initialized || subjects.length === 0 || topics.length === 0) return;
@@ -72,7 +77,7 @@ export default function Config() {
       {
         id: "selection-0",
         subject: firstSubject,
-        topic: topics.filter((topic) => topic.subject == firstSubject.id)[0],
+        topics: [topics.filter((topic) => topic.subject == firstSubject.id)[0]],
         noq: "",
         questions: [],
         currentQuestion: 0,
@@ -108,7 +113,7 @@ export default function Config() {
     selections.length > 0 &&
     selections.every((s) => {
       const n = parseInt(s.noq, 10);
-      return !isNaN(n) && n >= 1 && n <= 100;
+      return !isNaN(n) && n >= 1 && n <= 100 && s.topics.length > 0;
     }) &&
     time !== "";
 
@@ -123,11 +128,11 @@ export default function Config() {
     // generate questions for each selection
     const exams: Exam[] = selections.map((sel) => {
       const noq = Math.min(parseInt(sel.noq, 10) || 20, 100);
-      const generated = getRandomQuestions(questions, sel.subject.id, sel.topic.id, noq);
+      const generated = getRandomQuestions(questions, sel.subject.id, sel.topics.map(t => t.id), noq);
       return {
         id: v4(),
         subject: sel.subject,
-        topic: sel.topic,
+        topics: sel.topics,
         noq: String(generated.length),
         questions: generated,
         currentQuestion: 0,
@@ -194,9 +199,9 @@ export default function Config() {
               draft.push({
                 id: v4(),
                 subject: firstSubject,
-                topic: topics.filter(
+                topics: [topics.filter(
                   (topic) => topic.subject == firstSubject.id,
-                )[0],
+                )[0]],
                 noq: "",
                 questions: [],
                 currentQuestion: 0,
@@ -280,11 +285,7 @@ function SelectionInt({
             )[0];
             setSelections((draft) => {
               draft[index].subject = sub;
-              draft[index].topic = firstTopic || {
-                id: "",
-                name: "",
-                subject: sub.id,
-              };
+              draft[index].topics = firstTopic ? [firstTopic] : [];
             });
           }
         }}
@@ -304,37 +305,51 @@ function SelectionInt({
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Select
-        value={selection.topic?.id}
-        onValueChange={(value) => {
-          const top = topics.find((top) => top.id == value);
-          if (top) {
-            setSelections((draft) => {
-              draft[index].topic = top;
-            });
-          }
-        }}
-      >
-        <SelectTrigger className="w-full">
-          <SelectValue placeholder="Select a topic" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            {topics
-              .filter((topic) => topic.subject == selection.subject.id)
-              .map((topic) => {
-                return (
-                  <SelectItem key={topic.id} value={topic.id}>
-                    <span className="flex items-center gap-2">
-                      {topic.name}
-                      <MasteryBadge topicId={topic.id} />
-                    </span>
-                  </SelectItem>
-                );
-              })}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button className="flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs">
+            <span className="truncate text-left">
+              {selection.topics.length === 0
+                ? "Select topics"
+                : selection.topics.length === 1
+                  ? selection.topics[0].name
+                  : `${selection.topics.length} topics selected`}
+            </span>
+            <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          {topics
+            .filter((topic) => topic.subject == selection.subject.id)
+            .map((topic) => {
+              const isSelected = selection.topics.some((t) => t.id === topic.id);
+              return (
+                <DropdownMenuCheckboxItem
+                  key={topic.id}
+                  checked={isSelected}
+                  onSelect={(e) => e.preventDefault()}
+                  onCheckedChange={() => {
+                    setSelections((draft) => {
+                      const idx = draft[index].topics.findIndex(
+                        (t) => t.id === topic.id,
+                      );
+                      if (idx >= 0) {
+                        draft[index].topics.splice(idx, 1);
+                      } else {
+                        draft[index].topics.push(topic);
+                      }
+                    });
+                  }}
+                >
+                  <span className="flex items-center gap-2">
+                    {topic.name}
+                    <MasteryBadge topicId={topic.id} />
+                  </span>
+                </DropdownMenuCheckboxItem>
+              );
+            })}
+        </DropdownMenuContent>
+      </DropdownMenu>
       <Input
         placeholder="Enter number of questions 1 - 100"
         type="number"
@@ -360,13 +375,14 @@ const convertTime = (time: string) => {
 const getRandomQuestions = (
   questions: Question[],
   subjectId: string,
-  topicId: string,
+  topicIds: string[],
   count: number,
 ): ExamQuestion[] => {
   const cap = Math.min(count, 100);
+  const topicSet = new Set(topicIds);
 
   const pool = questions.filter(
-    (q) => q.subject === subjectId && q.topic === topicId && q.is_visible,
+    (q) => q.subject === subjectId && topicSet.has(q.topic) && q.is_visible,
   );
 
   const shuffleArray = <T,>(arr: T[]): T[] => {

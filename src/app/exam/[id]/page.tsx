@@ -66,7 +66,9 @@ function ExamContent() {
             <SelectContent align="center">
               {exams.map((exam) => (
                 <SelectItem key={exam.id} value={exam.id}>
-                  {exam.topic.name}
+                  {exam.topics.length === 1
+                    ? exam.topics[0].name
+                    : `${exam.subject.name} - ${exam.topics.length} topics`}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -91,7 +93,7 @@ function ResultsDialog({
 }: {
   open: boolean;
   onClose: () => void;
-  exams: { topic: { name: string }; score: number; noq: string }[];
+  exams: { topics: { name: string }[]; score: number; noq: string }[];
 }) {
   const totalScore = exams.reduce((sum, e) => sum + e.score, 0);
   const totalQuestions = exams.reduce((sum, e) => sum + Number(e.noq), 0);
@@ -115,7 +117,11 @@ function ResultsDialog({
                     key={i}
                     className="flex min-w-0 items-center justify-between gap-2 text-sm"
                   >
-                    <span className="truncate">{exam.topic.name}</span>
+                    <span className="truncate">
+                      {exam.topics.length === 1
+                        ? exam.topics[0].name
+                        : `${exam.topics.length} topics`}
+                    </span>
                     <span className="shrink-0 font-medium">{pct}%</span>
                   </div>
                 );

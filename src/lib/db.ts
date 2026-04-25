@@ -79,3 +79,22 @@ db.version(7).stores({
   topics: "id, subject, order",
   meta: "key"
 });
+
+// v8: Migrate exam.topic → exam.topics (array) for multi-topic selection
+db.version(8).stores({
+  exam_sessions: "id, createdAt",
+  questions: "id, subject, topic",
+  question_stats: "questionId, subjectId, topicId",
+  subjects: "id, order",
+  topics: "id, subject, order",
+  meta: "key"
+}).upgrade(async (tx) => {
+  await tx.table("exam_sessions").toCollection().modify((session: any) => {
+    for (const exam of session.exams) {
+      if (exam.topic && !exam.topics) {
+        exam.topics = [exam.topic];
+        delete exam.topic;
+      }
+    }
+  });
+});
