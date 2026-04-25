@@ -8,7 +8,7 @@ export default function Header() {
       <Link href="/">
         <p className="text-2xl font-bold tracking-tight">D💀C</p>
       </Link>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         <StreakBadge />
         <ModeToggle />
       </div>
