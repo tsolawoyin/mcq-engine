@@ -31,7 +31,7 @@ import { Question } from "@/data/questions";
 import Link from "next/link";
 import { ModeToggle } from "./toggler";
 import { MasteryBadge } from "./mastery-badge";
-import { StreakBadge } from "./streak-badge";
+
 import { useImmer, Updater } from "use-immer";
 
 export interface Exam {
@@ -183,7 +183,6 @@ export default function Config() {
   return (
     <div className="flex-2 grid items-center">
       <div className="grid gap-5">
-        <StreakBadge />
         <AnimatePresence initial={false}>
           {selections.map((selection, index) => (
             <motion.div

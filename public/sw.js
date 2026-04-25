@@ -4,7 +4,7 @@
 // Bump this version when you deploy to clear old caches.
 // The browser detects sw.js changed → installs new SW →
 // activate event wipes stale caches → next visit is fresh.
-const CACHE_VERSION = "dac-v1";
+const CACHE_VERSION = "dac-v2";
 
 // ---- INSTALL ------------------------------------------------
 // Nothing to precache — we cache lazily as the user navigates.
