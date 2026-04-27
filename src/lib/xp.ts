@@ -7,15 +7,15 @@
  * highest-XP strategy, while still giving something for review/retention.
  *
  * POINT STRUCTURE:
- *   first_correct  → 10 base pts  (biggest reward: you learned something new)
- *   recovery       →  5 base pts  (you fixed a knowledge gap — great!)
+ *   first_correct  →  5 base pts  (biggest reward: you learned something new)
+ *   recovery       →  3 base pts  (you fixed a knowledge gap — great!)
  *   repeat_correct →  2 base pts  (retention matters, but diminishing return)
  *   wrong          →  0 base pts  (no penalty, no reward)
  *
  * MULTIPLIERS (stacked via multiplication):
- *   Streak:  1.0 + 0.1 per consecutive streak day, capped at 2.0×
+ *   Streak:  1.0 + 0.1 per consecutive streak day, capped at 1.5×
  *            → Rewards daily consistency, but cap prevents it from dominating.
- *   Breadth: 1.5× if you've practiced 3+ distinct topics today
+ *   Breadth: 1.25× if you've practiced 3+ distinct topics today
  *            → Rewards exploring multiple topics instead of tunneling into one.
  *
  * LEADERBOARD NOTES:
@@ -39,8 +39,8 @@ import { Attempt, XpEventType } from "./db";
 // add its base points here too.
 
 const BASE_POINTS: Record<XpEventType, number> = {
-  first_correct: 10,  // Never got this question right before → big reward
-  recovery: 5,        // Previously wrong, now correct → solid reward
+  first_correct: 5,   // Never got this question right before → big reward
+  recovery: 3,        // Previously wrong, now correct → solid reward
   repeat_correct: 2,  // Already answered correctly before → small reward
   wrong: 0,           // No points, but we still log the event
 };
@@ -51,13 +51,13 @@ const BASE_POINTS: Record<XpEventType, number> = {
 const STREAK_BONUS_PER_DAY = 0.1;
 
 /** Maximum streak multiplier (prevents streaks from dominating). */
-const STREAK_MULTIPLIER_CAP = 2.0;
+const STREAK_MULTIPLIER_CAP = 1.5;
 
 /** How many distinct topics you need today to trigger the breadth bonus. */
 const BREADTH_TOPIC_THRESHOLD = 3;
 
 /** The breadth multiplier when the threshold is met. */
-const BREADTH_MULTIPLIER = 1.5;
+const BREADTH_MULTIPLIER = 1.25;
 
 // ─── Event Classification ────────────────────────────────────────────
 
@@ -105,8 +105,8 @@ export function classifyAttempt(
  *   2. Breadth multiplier: rewards practicing across topics
  *
  * Example:
- *   - 5-day streak + 3 topics today = 1.5 (streak) × 1.5 (breadth) = 2.25×
- *   - 0-day streak + 1 topic today  = 1.0 (streak) × 1.0 (breadth) = 1.0×
+ *   - 5-day streak + 3 topics today = 1.5 (streak) × 1.25 (breadth) = 1.875×
+ *   - 0-day streak + 1 topic today  = 1.0 (streak) × 1.0 (breadth)  = 1.0×
  *
  * @param currentStreak      - Number of consecutive days practiced (from streak_log)
  * @param distinctTopicsToday - How many unique topics the user has practiced today

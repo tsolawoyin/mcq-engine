@@ -56,8 +56,8 @@ export interface XpLog {
 /**
  * XpEventType — how we classify each answer for point-awarding.
  *
- * "first_correct"  → First time getting this question right.  (10 base pts)
- * "recovery"       → Got it right after previously getting it wrong. (5 base pts)
+ * "first_correct"  → First time getting this question right.  (5 base pts)
+ * "recovery"       → Got it right after previously getting it wrong. (3 base pts)
  * "repeat_correct" → Got it right again (already answered correctly before). (2 base pts)
  * "wrong"          → Incorrect answer. No points, but still logged for completeness.
  */
