@@ -35,7 +35,7 @@ export const topics: Topic[] = [
     id: "introduction-to-embryology-and-cell-division",
     name: "Introduction and Cell division",
     subject: "embryology-101",
-    order: 0,
+    order: 1,
   },
   // Physiology
   {
