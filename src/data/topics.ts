@@ -129,8 +129,26 @@ export const topics: Topic[] = [
   },
   {
     id: "glomerular-filtration",
-    name: "Rneal - Glomerular filtration",
+    name: "Renal - Glomerular filtration",
     subject: "physiology-101",
-    order: 15,
+    order: 16,
+  },
+  {
+    id: "tubular-function-and-urine-formation",
+    name: "Renal - Tubular func. and Urine form.",
+    subject: "physiology-101",
+    order: 17,
+  },
+  {
+    id: "urine-concentration-and-dilution",
+    name: "Renal - Urine conc. and dilution",
+    subject: "physiology-101",
+    order: 18,
+  },
+  {
+    id: "renal-clearance-and-clinicals",
+    name: "Renal - Renal clearance and Clinicals",
+    subject: "physiology-101",
+    order: 19,
   },
 ];
