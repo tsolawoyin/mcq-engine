@@ -2,7 +2,7 @@ import { ModeToggle } from "../toggler";
 import { StreakBadge } from "../streak-badge";
 import { XpBadge } from "../xp-badge";
 import Link from "next/link";
-import { BookOpen } from "lucide-react";
+import { Trophy } from "lucide-react";
 
 export default function Header() {
   return (
@@ -13,6 +13,12 @@ export default function Header() {
         </Link>
       </div>
       <div className="flex items-center gap-3">
+        <Link
+          href="/leaderboard"
+          className="flex items-center gap-1 rounded-full px-2 py-1 text-sm font-semibold transition-colors hover:bg-muted"
+        >
+          <Trophy className="h-5 w-5 text-yellow-500" />
+        </Link>
         <XpBadge />
         <StreakBadge />
         <ModeToggle />
