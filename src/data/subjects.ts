@@ -27,7 +27,7 @@ export const subjects: Subject[] = [
     order: 3,
   },
   {
-    id: "embryology",
+    id: "embryology-101",
     name: "Embryology",
     order: 4,
   },

@@ -21494,7 +21494,7 @@ export const questions = [
   // Embryology
   {
     id: "EMB-001",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Embryology is best defined as the study of:",
     options: [
@@ -21510,7 +21510,7 @@ export const questions = [
   },
   {
     id: "EMB-002",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Ontogeny refers to:",
     options: [
@@ -21525,7 +21525,7 @@ export const questions = [
   },
   {
     id: "EMB-003",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The prenatal period extends from:",
     options: [
@@ -21540,7 +21540,7 @@ export const questions = [
   },
   {
     id: "EMB-004",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The morula stage is typically reached:",
     options: [
@@ -21556,7 +21556,7 @@ export const questions = [
   },
   {
     id: "EMB-005",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following best describes the morula?",
     options: [
@@ -21572,7 +21572,7 @@ export const questions = [
   },
   {
     id: "EMB-006",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The blastula differs from the morula in that it:",
     options: [
@@ -21587,7 +21587,7 @@ export const questions = [
   },
   {
     id: "EMB-007",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Gastrulation results in the formation of:",
     options: [
@@ -21603,7 +21603,7 @@ export const questions = [
   },
   {
     id: "EMB-008",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Neurulation primarily involves the formation of the:",
     options: ["Blastocoel", "Neural tube", "Germ layers", "Placenta"],
@@ -21614,7 +21614,7 @@ export const questions = [
   },
   {
     id: "EMB-009",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The embryonic period is characterized mainly by:",
     options: [
@@ -21629,7 +21629,7 @@ export const questions = [
   },
   {
     id: "EMB-010",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The fetal period is primarily associated with:",
     options: [
@@ -21644,7 +21644,7 @@ export const questions = [
   },
   {
     id: "EMB-011",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Mitosis results in daughter cells that are:",
     options: [
@@ -21659,7 +21659,7 @@ export const questions = [
   },
   {
     id: "EMB-012",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "DNA replication occurs during:",
     options: ["Prophase", "Metaphase", "Interphase", "Telophase"],
@@ -21669,7 +21669,7 @@ export const questions = [
   },
   {
     id: "EMB-013",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The key event of metaphase in mitosis is:",
     options: [
@@ -21684,7 +21684,7 @@ export const questions = [
   },
   {
     id: "EMB-014",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "During anaphase of mitosis:",
     options: [
@@ -21699,7 +21699,7 @@ export const questions = [
   },
   {
     id: "EMB-015",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Cytokinesis refers to:",
     options: [
@@ -21714,7 +21714,7 @@ export const questions = [
   },
   {
     id: "EMB-016",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following best describes the purpose of mitosis?",
     options: [
@@ -21730,7 +21730,7 @@ export const questions = [
   },
   {
     id: "EMB-017",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question:
       "Which stage of mitosis is characterized by chromosome condensation and disappearance of the nuclear membrane?",
@@ -21741,7 +21741,7 @@ export const questions = [
   },
   {
     id: "EMB-018",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Spindle fibers attach to chromosomes at the:",
     options: ["Centrosome", "Chromatid", "Centromere", "Nucleolus"],
@@ -21751,7 +21751,7 @@ export const questions = [
   },
   {
     id: "EMB-019",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following occurs during telophase?",
     options: [
@@ -21766,7 +21766,7 @@ export const questions = [
   },
   {
     id: "EMB-020",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Meiosis differs from mitosis because it:",
     options: [
@@ -21781,7 +21781,7 @@ export const questions = [
   },
   {
     id: "EMB-021",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Meiosis consists of:",
     options: [
@@ -21796,7 +21796,7 @@ export const questions = [
   },
   {
     id: "EMB-022",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The reduction of chromosome number occurs during:",
     options: ["Meiosis II", "Mitosis", "Meiosis I", "Interphase"],
@@ -21806,7 +21806,7 @@ export const questions = [
   },
   {
     id: "EMB-023",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Synapsis refers to:",
     options: [
@@ -21821,7 +21821,7 @@ export const questions = [
   },
   {
     id: "EMB-024",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Crossing over results in:",
     options: [
@@ -21836,7 +21836,7 @@ export const questions = [
   },
   {
     id: "EMB-025",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "A tetrad is composed of:",
     options: [
@@ -21851,7 +21851,7 @@ export const questions = [
   },
   {
     id: "EMB-026",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Independent assortment occurs due to:",
     options: [
@@ -21866,7 +21866,7 @@ export const questions = [
   },
   {
     id: "EMB-027",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Spermatogenesis occurs in the:",
     options: ["Ovary", "Seminiferous tubules", "Uterus", "Epididymis"],
@@ -21876,7 +21876,7 @@ export const questions = [
   },
   {
     id: "EMB-028",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Spermatogenesis begins at:",
     options: ["Birth", "Puberty", "Fertilization", "Old age"],
@@ -21886,7 +21886,7 @@ export const questions = [
   },
   {
     id: "EMB-029",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "One primary spermatocyte gives rise to:",
     options: ["One sperm", "Two sperm", "Four sperm", "Eight sperm"],
@@ -21896,7 +21896,7 @@ export const questions = [
   },
   {
     id: "EMB-030",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Oogenesis differs from spermatogenesis because it:",
     options: [
@@ -21911,7 +21911,7 @@ export const questions = [
   },
   {
     id: "EMB-031",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Oogenesis begins:",
     options: [
@@ -21926,7 +21926,7 @@ export const questions = [
   },
   {
     id: "EMB-032",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "At ovulation, the oocyte is arrested in:",
     options: ["Prophase I", "Metaphase I", "Metaphase II", "Telophase II"],
@@ -21936,7 +21936,7 @@ export const questions = [
   },
   {
     id: "EMB-033",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following best describes polar bodies?",
     options: [
@@ -21951,7 +21951,7 @@ export const questions = [
   },
   {
     id: "EMB-034",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following is a major function of meiosis?",
     options: ["Growth", "Repair", "Genetic variation", "Protein synthesis"],
@@ -21961,7 +21961,7 @@ export const questions = [
   },
   {
     id: "EMB-035",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Chiasmata are visible during:",
     options: ["Leptotene", "Zygotene", "Pachytene", "Diplotene"],
@@ -21971,7 +21971,7 @@ export const questions = [
   },
   {
     id: "EMB-036",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following best explains nondisjunction?",
     options: [
@@ -21987,7 +21987,7 @@ export const questions = [
   },
   {
     id: "EMB-037",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Nondisjunction most commonly occurs during:",
     options: ["Mitosis", "Meiosis I", "Interphase", "Cytokinesis"],
@@ -21997,7 +21997,7 @@ export const questions = [
   },
   {
     id: "EMB-038",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Down syndrome is associated with:",
     options: [
@@ -22012,7 +22012,7 @@ export const questions = [
   },
   {
     id: "EMB-039",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Turner syndrome is characterized by:",
     options: ["XXY", "XXX", "XO", "YY"],
@@ -22022,7 +22022,7 @@ export const questions = [
   },
   {
     id: "EMB-040",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question:
       "Which of the following best explains the difference between meiosis I and meiosis II?",
@@ -22038,7 +22038,7 @@ export const questions = [
   },
   {
     id: "EMB-041",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question:
       "Which structure ensures proper separation of chromatids during mitosis?",
@@ -22049,7 +22049,7 @@ export const questions = [
   },
   {
     id: "EMB-042",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which stage immediately follows metaphase in mitosis?",
     options: ["Prophase", "Interphase", "Anaphase", "Telophase"],
@@ -22059,7 +22059,7 @@ export const questions = [
   },
   {
     id: "EMB-043",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question:
       "Which of the following processes contributes to genetic diversity?",
@@ -22070,7 +22070,7 @@ export const questions = [
   },
   {
     id: "EMB-044",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following is TRUE about spermatogenesis?",
     options: [
@@ -22085,7 +22085,7 @@ export const questions = [
   },
   {
     id: "EMB-045",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following is TRUE about oogenesis?",
     options: [
@@ -22100,7 +22100,7 @@ export const questions = [
   },
   {
     id: "EMB-046",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which phase of meiosis is most similar to mitosis?",
     options: ["Meiosis I", "Meiosis II", "Prophase I", "Metaphase I"],
@@ -22110,7 +22110,7 @@ export const questions = [
   },
   {
     id: "EMB-047",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following best describes independent assortment?",
     options: [
@@ -22125,7 +22125,7 @@ export const questions = [
   },
   {
     id: "EMB-048",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following is NOT a feature of mitosis?",
     options: [
@@ -22140,7 +22140,7 @@ export const questions = [
   },
   {
     id: "EMB-049",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which structure is responsible for forming the neural tube?",
     options: ["Mesoderm", "Endoderm", "Ectoderm", "Placenta"],
@@ -22150,7 +22150,7 @@ export const questions = [
   },
   {
     id: "EMB-050",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Which of the following best summarizes meiosis?",
     options: [
@@ -22165,7 +22165,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-001",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Embryology deals with development before birth.",
     options: ["True", "False"],
@@ -22175,7 +22175,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-002",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Ontogeny refers only to prenatal development.",
     options: ["True", "False"],
@@ -22185,7 +22185,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-003",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The morula is a fluid-filled structure.",
     options: ["True", "False"],
@@ -22195,7 +22195,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-004",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Blastula contains a cavity called blastocoel.",
     options: ["True", "False"],
@@ -22205,7 +22205,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-005",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Gastrulation produces two germ layers.",
     options: ["True", "False"],
@@ -22215,7 +22215,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-006",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Neurulation occurs before gastrulation.",
     options: ["True", "False"],
@@ -22225,7 +22225,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-007",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The embryonic period is mainly for organ formation.",
     options: ["True", "False"],
@@ -22235,7 +22235,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-008",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "The fetal period is mainly for formation of germ layers.",
     options: ["True", "False"],
@@ -22245,7 +22245,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-009",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Mitosis produces genetically identical cells.",
     options: ["True", "False"],
@@ -22255,7 +22255,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-010",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "DNA replication occurs during mitosis.",
     options: ["True", "False"],
@@ -22265,7 +22265,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-011",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Metaphase involves separation of chromatids.",
     options: ["True", "False"],
@@ -22275,7 +22275,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-012",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Cytokinesis is division of cytoplasm.",
     options: ["True", "False"],
@@ -22285,7 +22285,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-013",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Meiosis produces haploid cells.",
     options: ["True", "False"],
@@ -22295,7 +22295,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-014",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Crossing over occurs during metaphase I.",
     options: ["True", "False"],
@@ -22305,7 +22305,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-015",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Tetrad consists of four chromatids.",
     options: ["True", "False"],
@@ -22315,7 +22315,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-016",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Meiosis I separates sister chromatids.",
     options: ["True", "False"],
@@ -22325,7 +22325,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-017",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Independent assortment occurs in metaphase I.",
     options: ["True", "False"],
@@ -22335,7 +22335,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-018",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Spermatogenesis produces one functional gamete.",
     options: ["True", "False"],
@@ -22345,7 +22345,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-019",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Oogenesis produces four equal gametes.",
     options: ["True", "False"],
@@ -22355,7 +22355,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-020",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Oogenesis begins before birth.",
     options: ["True", "False"],
@@ -22365,7 +22365,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-021",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Spermatogenesis begins at puberty.",
     options: ["True", "False"],
@@ -22375,7 +22375,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-022",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "At ovulation, the oocyte is in metaphase II.",
     options: ["True", "False"],
@@ -22385,7 +22385,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-023",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Polar bodies are functional gametes.",
     options: ["True", "False"],
@@ -22395,7 +22395,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-024",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Nondisjunction is failure of chromosome separation.",
     options: ["True", "False"],
@@ -22405,7 +22405,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-025",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Nondisjunction can lead to aneuploidy.",
     options: ["True", "False"],
@@ -22415,7 +22415,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-026",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Down syndrome is caused by monosomy 21.",
     options: ["True", "False"],
@@ -22425,7 +22425,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-027",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Turner syndrome is monosomy X.",
     options: ["True", "False"],
@@ -22435,7 +22435,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-028",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Meiosis contributes to genetic diversity.",
     options: ["True", "False"],
@@ -22445,7 +22445,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-029",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Mitosis contributes to genetic variation.",
     options: ["True", "False"],
@@ -22455,7 +22455,7 @@ export const questions = [
   },
   {
     id: "EMB-TF-030",
-    subject: "embryology",
+    subject: "embryology-101",
     topic: "introduction-to-embryology-and-cell-division",
     question: "Ectoderm gives rise to the nervous system.",
     options: ["True", "False"],
