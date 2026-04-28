@@ -36,11 +36,18 @@ export default function AppProvider({
       const needsReseed = storedVersion?.value !== DATA_VERSION;
 
       if (needsReseed) {
-        // Source data changed — re-seed content tables
+        // Source data changed — clear and re-seed content tables so the DB
+        // is always an exact mirror of the static data files.
+        // (bulkPut alone never removes rows deleted from source.)
         await Promise.all([
-          db.subjects.bulkPut(defaultSubjects),
-          db.topics.bulkPut(defaultTopics),
-          db.questions.bulkPut(defaultQuestions),
+          db.subjects.clear(),
+          db.topics.clear(),
+          db.questions.clear(),
+        ]);
+        await Promise.all([
+          db.subjects.bulkAdd(defaultSubjects),
+          db.topics.bulkAdd(defaultTopics),
+          db.questions.bulkAdd(defaultQuestions),
         ]);
         await db.meta.put({ key: "dataVersion", value: DATA_VERSION });
 
