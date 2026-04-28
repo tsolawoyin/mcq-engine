@@ -30,6 +30,13 @@ export const topics: Topic[] = [
     subject: "gross-anatomy-101",
     order: 3,
   },
+  // Embryology
+  {
+    id: "introduction-to-embryology-and-cell-division",
+    name: "Introduction and Cell division",
+    subject: "embryology",
+    order: 0,
+  },
   // Physiology
   {
     id: "General Physiology - Cell Membrane",
