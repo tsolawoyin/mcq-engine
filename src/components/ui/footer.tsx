@@ -4,7 +4,7 @@ export default function Footer() {
     <footer className="border-t py-2 text-sm text-muted-foreground">
       <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
         <p>
-          <Link href="/readings"></Link> by{" "}
+          <Link href="/readings">Created</Link> by{" "}
           <a
             href="https://github.com/tsolawoyin"
             target="_blank"
